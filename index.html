@@ -666,41 +666,45 @@ footer{background:#060f1e;padding:26px 24px;text-align:center;color:rgba(255,255
       <h2 style="font-family:'Noto Serif JP',serif;font-size:26px;font-weight:700;color:#fff;margin-bottom:14px">お問い合わせありがとうございます</h2>
       <p style="color:rgba(255,255,255,0.6);font-size:16px;line-height:1.85">内容を確認のうえ、折り返しご連絡いたします。</p>
     </div>
-    <form class="form-grid" id="contact-form" onsubmit="handleSubmit(event)">
+    <form class="form-grid" id="contact-form" name="dc-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
+      <input type="hidden" name="form-name" value="dc-contact">
+      <p style="display:none">
+        <label>Bot対策：<input name="bot-field"></label>
+      </p>
       <div class="form-cols">
-        <div class="form-row"><label>お名前<span class="req">必須</span></label><input type="text" required placeholder="山田 太郎"></div>
-        <div class="form-row"><label>会社名<span class="req">必須</span></label><input type="text" required placeholder="株式会社○○"></div>
+        <div class="form-row"><label>お名前<span class="req">必須</span></label><input type="text" name="name" required placeholder="山田 太郎"></div>
+        <div class="form-row"><label>会社名<span class="req">必須</span></label><input type="text" name="company" required placeholder="株式会社○○"></div>
       </div>
-      <div class="form-row"><label>メールアドレス<span class="req">必須</span></label><input type="email" required placeholder="info@example.co.jp"></div>
+      <div class="form-row"><label>メールアドレス<span class="req">必須</span></label><input type="email" name="email" required placeholder="info@example.co.jp"></div>
       <div class="form-cols">
-        <div class="form-row"><label>役職<span class="opt">任意</span></label><input type="text" placeholder="代表取締役 / 人事部長 など"></div>
-        <div class="form-row"><label>電話番号<span class="opt">任意</span></label><input type="tel" placeholder="電話番号を入力してください"></div>
+        <div class="form-row"><label>役職<span class="opt">任意</span></label><input type="text" name="position" placeholder="代表取締役 / 人事部長 など"></div>
+        <div class="form-row"><label>電話番号<span class="opt">任意</span></label><input type="tel" name="tel" placeholder="電話番号を入力してください"></div>
       </div>
       <div class="form-cols">
         <div class="form-row"><label>従業員数<span class="opt">任意</span></label>
-          <select><option value="">選択してください</option><option>1〜5名</option><option>6〜10名</option><option>11〜30名</option><option>31〜50名</option><option>51〜100名</option><option>101名以上</option></select>
+          <select name="employees"><option value="">選択してください</option><option value="1〜5名">1〜5名</option><option value="6〜10名">6〜10名</option><option value="11〜30名">11〜30名</option><option value="31〜50名">31〜50名</option><option value="51〜100名">51〜100名</option><option value="101名以上">101名以上</option></select>
         </div>
         <div class="form-row"><label>折り返し可能な時間帯<span class="opt">任意</span></label>
-          <select><option value="">選択してください</option><option>午前</option><option>12〜15時</option><option>15〜18時</option><option>18時以降</option><option>メール連絡を希望</option></select>
+          <select name="preferred_time"><option value="">選択してください</option><option value="午前">午前</option><option value="12〜15時">12〜15時</option><option value="15〜18時">15〜18時</option><option value="18時以降">18時以降</option><option value="メール連絡を希望">メール連絡を希望</option></select>
         </div>
       </div>
       <div class="form-row">
         <label>気になっていることを選んでください<span class="opt">任意・複数選択可</span></label>
         <p style="font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:10px">まだ整理できていなくても大丈夫です。</p>
         <div class="theme-grid">
-          <label class="theme-item"><input type="checkbox">採用・定着に課題がある</label>
-          <label class="theme-item"><input type="checkbox">福利厚生を整えたい</label>
-          <label class="theme-item"><input type="checkbox">退職金制度を見直したい</label>
-          <label class="theme-item"><input type="checkbox">企業型DC・選択制DCについて知りたい</label>
-          <label class="theme-item"><input type="checkbox">従業員向け金融教育を始めたい</label>
-          <label class="theme-item"><input type="checkbox">社会保険料・人件費への影響を確認したい</label>
-          <label class="theme-item"><input type="checkbox">従業員説明会を相談したい</label>
-          <label class="theme-item"><input type="checkbox">福利厚生・保障制度全体を見直したい</label>
-          <label class="theme-item"><input type="checkbox">まずは導入できるか確認したい</label>
-          <label class="theme-item"><input type="checkbox">その他</label>
+          <label class="theme-item"><input type="checkbox" name="themes" value="採用・定着に課題がある">採用・定着に課題がある</label>
+          <label class="theme-item"><input type="checkbox" name="themes" value="福利厚生を整えたい">福利厚生を整えたい</label>
+          <label class="theme-item"><input type="checkbox" name="themes" value="退職金制度を見直したい">退職金制度を見直したい</label>
+          <label class="theme-item"><input type="checkbox" name="themes" value="企業型DC・選択制DCについて知りたい">企業型DC・選択制DCについて知りたい</label>
+          <label class="theme-item"><input type="checkbox" name="themes" value="従業員向け金融教育を始めたい">従業員向け金融教育を始めたい</label>
+          <label class="theme-item"><input type="checkbox" name="themes" value="社会保険料・人件費への影響を確認したい">社会保険料・人件費への影響を確認したい</label>
+          <label class="theme-item"><input type="checkbox" name="themes" value="従業員説明会を相談したい">従業員説明会を相談したい</label>
+          <label class="theme-item"><input type="checkbox" name="themes" value="福利厚生・保障制度全体を見直したい">福利厚生・保障制度全体を見直したい</label>
+          <label class="theme-item"><input type="checkbox" name="themes" value="まずは導入できるか確認したい">まずは導入できるか確認したい</label>
+          <label class="theme-item"><input type="checkbox" name="themes" value="その他">その他</label>
         </div>
       </div>
-      <div class="form-row"><label>お問い合わせ内容<span class="req">必須</span></label><textarea required placeholder="例：自社で企業型DCを検討したい／知人企業に紹介したい／従業員向け金融教育について聞きたい など"></textarea></div>
+      <div class="form-row"><label>お問い合わせ内容<span class="req">必須</span></label><textarea name="message" required placeholder="例：自社で企業型DCを検討したい／知人企業に紹介したい／従業員向け金融教育について聞きたい など"></textarea></div>
       <div class="form-row">
         <details style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;overflow:hidden">
           <summary style="cursor:pointer;padding:13px 16px;font-size:14px;font-weight:700;color:rgba(255,255,255,0.7);list-style:none;display:flex;justify-content:space-between;align-items:center">
@@ -723,7 +727,7 @@ footer{background:#060f1e;padding:26px 24px;text-align:center;color:rgba(255,255
           </div>
         </details>
       </div>
-      <div class="form-row"><label class="form-chk"><input type="checkbox" id="agree-chk" onchange="document.getElementById('submit-btn').disabled=!this.checked"> 個人情報の取扱いに同意します</label></div>
+      <div class="form-row"><label class="form-chk"><input type="checkbox" id="agree-chk" name="privacy_agree" value="同意する" required onchange="document.getElementById('submit-btn').disabled=!this.checked"> 個人情報の取扱いに同意します</label></div>
       <button type="submit" class="form-submit" id="submit-btn" disabled>導入可否を相談する</button>
     </form>
   </div>
@@ -931,10 +935,55 @@ document.getElementById('newlimit-chk').addEventListener('change', calcSim);
 calcSim();
 
 // ── FORM ─────────────────────────────────────────────────────────────
+function encodeFormData(data) {
+  return Object.keys(data)
+    .map(function(key) {
+      if (Array.isArray(data[key])) {
+        return data[key].map(function(value) {
+          return encodeURIComponent(key) + '=' + encodeURIComponent(value);
+        }).join('&');
+      }
+      return encodeURIComponent(key) + '=' + encodeURIComponent(data[key]);
+    })
+    .join('&');
+}
+
 function handleSubmit(e) {
   e.preventDefault();
-  document.getElementById('contact-form').style.display = 'none';
-  document.getElementById('contact-success').style.display = 'block';
+
+  var form = e.target;
+  var submitBtn = document.getElementById('submit-btn');
+  submitBtn.disabled = true;
+  submitBtn.textContent = '送信中です…';
+
+  var formData = new FormData(form);
+  var data = {};
+
+  formData.forEach(function(value, key) {
+    if (data[key]) {
+      if (!Array.isArray(data[key])) data[key] = [data[key]];
+      data[key].push(value);
+    } else {
+      data[key] = value;
+    }
+  });
+
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: encodeFormData(data)
+  })
+  .then(function(response) {
+    if (!response.ok) throw new Error('送信に失敗しました');
+    document.getElementById('contact-form').style.display = 'none';
+    document.getElementById('contact-success').style.display = 'block';
+  })
+  .catch(function(error) {
+    alert('送信に失敗しました。お手数ですが、時間をおいて再度お試しください。');
+    console.error(error);
+    submitBtn.textContent = '導入可否を相談する';
+    submitBtn.disabled = !document.getElementById('agree-chk').checked;
+  });
 }
 </script>
 </body>
