@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>選択制企業型確定拠出年金（DC）導入支援｜採用・定着・福利厚生・資産形成支援</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;background:#0f1c35;color:#1a1a2e;overflow-x:hidden;font-size:16px;line-height:1.8}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,28,53,0.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(200,162,39,0.18);padding:0 20px}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px;gap:8px}
+.nav-logo{color:#c8a227;font-size:13px;font-weight:700;letter-spacing:0.05em;white-space:nowrap;flex-shrink:0}
+.nav-links{display:flex;gap:2px;flex-wrap:nowrap}
+.nav-link{color:rgba(255,255,255,0.6);font-size:12px;padding:5px 9px;border-radius:4px;cursor:pointer;transition:all .2s;border:none;background:none;white-space:nowrap;font-family:inherit}
+.nav-link:hover,.nav-link.active{color:#c8a227;background:rgba(200,162,39,0.1)}
+.hero{min-height:100vh;background:linear-gradient(140deg,#0a1628 0%,#162447 55%,#1d2f5c 100%);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:90px 24px 70px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 80% 20%,rgba(200,162,39,0.07),transparent)}
+.hero-tag{display:inline-block;background:rgba(200,162,39,0.12);border:1px solid rgba(200,162,39,0.35);color:#c8a227;font-size:11.5px;letter-spacing:0.14em;padding:5px 18px;border-radius:20px;margin-bottom:30px}
+.hero-title{font-family:'Noto Serif JP',serif;font-size:clamp(26px,4.8vw,48px);font-weight:700;color:#fff;line-height:1.38;margin-bottom:22px;letter-spacing:0.02em}
+.hero-subtitle{font-size:clamp(14px,2vw,18px);color:rgba(255,255,255,0.62);margin-bottom:24px;line-height:1.85;max-width:580px}
+.hero-target-tag{background:rgba(200,162,39,0.12);border:1px solid rgba(200,162,39,0.3);color:rgba(255,255,255,0.7);font-size:12px;padding:5px 16px;border-radius:20px;letter-spacing:0.04em;display:inline-block;margin-bottom:30px}
+.hero-cta-row{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-bottom:58px}
+.btn-primary{background:linear-gradient(135deg,#c8a227,#e8bc30);color:#0f1c35;font-size:15px;font-weight:700;padding:14px 30px;border-radius:6px;border:none;cursor:pointer;letter-spacing:0.04em;transition:transform .2s,box-shadow .2s;font-family:inherit}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,162,39,0.35)}
+.btn-outline{background:transparent;color:#fff;font-size:15px;font-weight:500;padding:14px 30px;border-radius:6px;border:1px solid rgba(255,255,255,0.28);cursor:pointer;transition:all .2s;font-family:inherit}
+.btn-outline:hover{border-color:#c8a227;color:#c8a227}
+.hero-stats{display:flex;gap:36px;flex-wrap:wrap;justify-content:center}
+.hero-stat{text-align:center}
+.hero-stat-num{font-family:'Noto Serif JP',serif;font-size:clamp(18px,2.8vw,28px);font-weight:700;color:#c8a227}
+.hero-stat-label{font-size:12.5px;color:rgba(255,255,255,0.48);margin-top:4px;line-height:1.5}
+.hero-stat-sub{font-size:11px;color:rgba(255,255,255,0.3);margin-top:3px}
+.data-band{background:#fff;border-bottom:1px solid rgba(15,28,53,0.07)}
+.data-band-inner{max-width:1100px;margin:0 auto;padding:60px 24px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.data-band-copy h2{font-family:'Noto Serif JP',serif;font-size:clamp(20px,3vw,26px);font-weight:700;color:#162447;line-height:1.55;margin-bottom:16px}
+.data-band-copy p{font-size:15px;color:#555;line-height:1.9}
+.data-bars{display:flex;flex-direction:column;gap:20px}
+.data-bar-label{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.data-bar-label span:first-child{font-size:14px;font-weight:700;color:#162447}
+.data-bar-label span:last-child{font-size:18px;font-weight:700;font-family:'Noto Serif JP',serif}
+.data-bar-track{height:8px;border-radius:99px;background:#eef0f5;overflow:hidden}
+.data-bar-fill{height:100%;border-radius:99px;transition:width 1.2s ease;width:0%}
+.data-bar-fill.gold{background:linear-gradient(90deg,#c8a227,#e8bc30)}
+.data-bar-fill.navy{background:linear-gradient(90deg,#162447,#2a4080)}
+.data-band-source{font-size:11.5px;color:#aaa;margin-top:20px;line-height:1.7}
+@media(max-width:768px){.data-band-inner{grid-template-columns:1fr;gap:36px}}
+section{padding:80px 24px}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-tag{font-size:11.5px;letter-spacing:0.18em;text-transform:uppercase;color:#c8a227;margin-bottom:12px;font-weight:600}
+.section-title{font-family:'Noto Serif JP',serif;font-size:clamp(22px,3.5vw,32px);font-weight:700;margin-bottom:16px;line-height:1.48}
+.section-lead{font-size:15.5px;line-height:1.95;color:#666;margin-bottom:40px;max-width:700px}
+.section-divider{width:44px;height:2px;background:linear-gradient(to right,#c8a227,#e8bc30);margin-bottom:36px;border-radius:2px}
+.bg-white{background:#fff}
+.bg-light{background:#f7f8fc}
+.bg-dark{background:#0f1c35;color:#fff}
+.bg-dark .section-title{color:#fff}
+.bg-dark .section-lead{color:rgba(255,255,255,0.6)}
+.card{background:#fff;border:1px solid rgba(15,28,53,0.07);border-radius:16px;padding:30px 26px;transition:transform .2s,box-shadow .2s;box-shadow:0 6px 20px rgba(15,28,53,0.05);background:linear-gradient(180deg,#fff 0%,#fbfcfe 100%)}
+.card:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(15,28,53,0.09)}
+.card-num{font-family:'Noto Serif JP',serif;font-size:30px;font-weight:700;color:rgba(15,28,53,0.07);line-height:1;margin-bottom:4px}
+.card-tag{font-size:11px;color:#c8a227;font-weight:700;letter-spacing:0.08em;margin-bottom:8px}
+.card-title{font-size:17px;font-weight:700;color:#162447;margin-bottom:10px;line-height:1.5}
+.card-text{font-size:15px;color:#555;line-height:1.85}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.tip{position:relative;cursor:help;display:inline}
+.tip-trigger{border-bottom:1px dotted #c8a227;color:inherit;background:none;border-top:0;border-left:0;border-right:0;padding:0;cursor:help;font-size:inherit;font-family:inherit}
+.tip-body{position:absolute;z-index:200;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);width:300px;background:#162447;color:#fff;font-size:13px;line-height:1.7;padding:14px 16px;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,0.3);opacity:0;visibility:hidden;transition:opacity .2s;pointer-events:none}
+.tip-body::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#162447}
+.tip:hover .tip-body,.tip:focus-within .tip-body{opacity:1;visibility:visible}
+.data-btn{display:inline-flex;align-items:center;gap:5px;margin-top:14px;font-size:12px;font-weight:700;color:#c8a227;background:rgba(200,162,39,0.06);border:1px solid rgba(200,162,39,0.2);border-radius:20px;padding:4px 12px;cursor:pointer;transition:background .2s;position:relative;font-family:inherit}
+.data-btn:hover{background:rgba(200,162,39,0.12)}
+.data-btn .pop{position:absolute;bottom:calc(100% + 8px);left:0;width:300px;background:#162447;color:#fff;font-size:13px;line-height:1.7;padding:16px;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,0.3);opacity:0;visibility:hidden;transition:opacity .2s;pointer-events:none;font-weight:400;text-align:left;z-index:200;white-space:pre-wrap}
+.data-btn .pop::after{content:'';position:absolute;top:100%;left:20px;border:6px solid transparent;border-top-color:#162447}
+.data-btn.open .pop{opacity:1;visibility:visible;pointer-events:auto}
+.pop-src{font-size:11.5px;color:rgba(200,162,39,0.8);margin-top:8px;border-top:1px solid rgba(255,255,255,0.1);padding-top:8px}
+.profile-card{background:#fff;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,0.07);overflow:hidden;display:flex;max-width:800px;margin:0 auto}
+.profile-left{background:linear-gradient(135deg,#162447,#1f4068);width:230px;flex-shrink:0;padding:38px 28px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.profile-name{color:#fff;font-size:19px;font-weight:700;margin-bottom:4px}
+.profile-name-en{color:rgba(255,255,255,0.45);font-size:12px;margin-bottom:16px}
+.profile-badge{background:rgba(200,162,39,0.18);border:1px solid rgba(200,162,39,0.35);color:#c8a227;font-size:11px;padding:3px 10px;border-radius:10px;margin-bottom:6px;display:block}
+.profile-right{padding:34px;flex:1}
+.profile-motto{font-family:'Noto Serif JP',serif;font-size:17px;font-weight:700;color:#162447;margin-bottom:8px;line-height:1.55}
+.profile-motto-sub{font-size:14px;color:#888;margin-bottom:22px}
+.profile-label{font-size:11px;font-weight:700;letter-spacing:0.1em;color:#c8a227;text-transform:uppercase;margin-bottom:8px}
+.profile-quals{list-style:none;margin-bottom:18px}
+.profile-quals li{font-size:14px;color:#444;padding:3px 0;border-bottom:1px solid #f0f0f0;display:flex;align-items:center;gap:8px}
+.profile-quals li::before{content:'◆';color:#c8a227;font-size:8px;flex-shrink:0}
+.profile-career{font-size:14px;color:#666;line-height:1.8}
+.win-win{display:flex;gap:22px;flex-wrap:wrap;margin:28px 0}
+.win-box{flex:1;min-width:260px;background:#fff;border-radius:14px;padding:26px;border:1px solid rgba(15,28,53,0.07);box-shadow:0 4px 16px rgba(15,28,53,0.04)}
+.win-box-title{font-size:16px;font-weight:700;color:#162447;margin-bottom:14px}
+.win-list{list-style:none}
+.win-list li{font-size:15px;color:#444;padding:7px 0;border-bottom:1px solid #f2f3f8;padding-left:22px;position:relative;line-height:1.7}
+.win-list li::before{content:'✓';position:absolute;left:0;color:#16a34a;font-weight:700}
+.fwb-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.fwb-manifesto{font-family:'Noto Serif JP',serif;font-size:clamp(20px,2.8vw,26px);font-weight:700;color:#fff;line-height:1.6;margin-bottom:24px}
+.fwb-manifesto em{color:#c8a227;font-style:normal}
+.fwb-lead{font-size:15px;color:rgba(255,255,255,0.65);line-height:1.9}
+.fwb-cards{display:flex;flex-direction:column;gap:16px}
+.fwb-card{background:rgba(255,255,255,0.05);border:1px solid rgba(200,162,39,0.2);border-radius:12px;padding:22px}
+.fwb-card-label{font-size:11px;font-weight:700;color:#c8a227;letter-spacing:0.1em;margin-bottom:6px}
+.fwb-card-title{font-size:16px;font-weight:700;color:#fff;margin-bottom:6px}
+.fwb-card-text{font-size:14px;color:rgba(255,255,255,0.6);line-height:1.75}
+@media(max-width:768px){.fwb-grid{grid-template-columns:1fr}}
+.history-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.hist-card{background:#fff;border-radius:14px;padding:24px 20px;border:1px solid rgba(15,28,53,0.07);box-shadow:0 4px 16px rgba(15,28,53,0.05)}
+.hist-year{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:700;color:#c8a227;margin-bottom:6px}
+.hist-title{font-size:15px;font-weight:700;color:#162447;margin-bottom:8px;line-height:1.4}
+.hist-text{font-size:13.5px;color:#666;line-height:1.75}
+@media(max-width:768px){.history-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.history-grid{grid-template-columns:1fr}}
+.acc{border:1px solid rgba(15,28,53,0.09);border-radius:12px;background:#fff;margin-bottom:12px;overflow:hidden}
+.acc summary{cursor:pointer;list-style:none;padding:17px 20px;font-weight:700;font-size:15.5px;color:#162447;display:flex;align-items:center;justify-content:space-between}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:'＋';color:#c8a227;font-weight:700}
+.acc[open] summary::after{content:'−'}
+.acc .acc-body{padding:0 20px 20px;color:#555;font-size:15px;line-height:1.85}
+.sim-wrap{background:#fff;border:1px solid rgba(15,28,53,0.07);border-radius:18px;overflow:hidden;box-shadow:0 10px 40px rgba(15,28,53,0.08)}
+.sim-grid{display:grid;grid-template-columns:1fr 1fr}
+.sim-controls{padding:30px 28px;border-right:1px solid rgba(15,28,53,0.07)}
+.sim-controls h3{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;color:#162447;margin-bottom:4px}
+.sim-hint{color:#888;font-size:13.5px;margin-bottom:22px}
+.sim-field{margin-bottom:22px}
+.sim-fl{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px}
+.sim-fl-label{font-weight:700;font-size:15px;color:#162447}
+.sim-fl-val{font-weight:700;font-size:20px;color:#162447}
+.sim-fl-val small{font-size:13px;color:#888;font-weight:500}
+.sim-range{width:100%;-webkit-appearance:none;appearance:none;height:5px;border-radius:99px;background:#e4e7ef;outline:none}
+.sim-range::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:#162447;border:3px solid #fff;box-shadow:0 2px 8px rgba(22,36,71,0.35);cursor:pointer}
+.sim-chk{display:flex;align-items:center;gap:9px;font-size:14.5px;color:#162447;cursor:pointer;margin-top:10px}
+.sim-chk input{width:18px;height:18px;accent-color:#c8a227}
+.sim-chk-note{font-size:12px;color:#aaa;margin-top:6px;line-height:1.6}
+.sim-result{padding:30px 28px;background:#f7f8fc}
+.sim-head{text-align:center;padding:6px 0 14px;border-bottom:1px dashed #dde0ea;margin-bottom:16px}
+.sim-head .cap{font-size:13.5px;color:#888;font-weight:700}
+.sim-big{font-size:42px;font-weight:700;line-height:1.1;margin:8px 0 4px}
+.sim-head .sub{font-size:13.5px;color:#888}
+.sim-head .sub b{color:#16a34a}
+.sim-head .near-note{font-size:12px;color:#aaa;margin-top:8px;line-height:1.6}
+.sim-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sim-slip{border:1px solid rgba(15,28,53,0.07);border-radius:10px;overflow:hidden}
+.sim-slip h4{margin:0;font-size:12.5px;font-weight:700;text-align:center;padding:8px;color:#fff}
+.sim-slip.bank h4{background:#5b6478}
+.sim-slip.dc h4{background:#162447}
+.sim-slip table{width:100%;border-collapse:collapse;font-size:13.5px}
+.sim-slip td{padding:6px 11px;border-top:1px solid rgba(15,28,53,0.05)}
+.sim-slip td.r{text-align:right;font-variant-numeric:tabular-nums}
+.sim-slip tr.dim td{color:#888}
+.sim-slip tr.dispo td{font-weight:700;color:#162447;background:rgba(200,162,39,0.08)}
+.sim-bar{height:9px;border-radius:99px;background:#e4e7ef;margin-top:7px;overflow:hidden}
+.sim-bar i{display:block;height:100%;background:#162447;transition:width .4s}
+.sim-slip.bank .sim-bar i{background:#5b6478}
+.sim-note{font-size:13px;color:#666;line-height:1.85;padding:20px 28px;border-top:1px solid rgba(15,28,53,0.06);background:#fafbfe}
+.sim-note b{color:#b4632a}
+@media(max-width:820px){.sim-grid{grid-template-columns:1fr}.sim-controls{border-right:0;border-bottom:1px solid rgba(15,28,53,0.07)}.sim-cols{grid-template-columns:1fr}}
+.caution-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
+.caution-card{background:#fff;border:1px solid rgba(15,28,53,0.07);border-radius:12px;padding:22px;box-shadow:0 4px 14px rgba(15,28,53,0.04)}
+.caution-card h4{font-size:16px;font-weight:700;color:#162447;margin-bottom:8px}
+.caution-card p{font-size:15px;color:#555;line-height:1.8;margin:0}
+.warn-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#d97706;margin-right:6px}
+.support-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px}
+.support-card{background:#fff;border:1px solid rgba(15,28,53,0.07);border-radius:14px;padding:26px 24px;box-shadow:0 4px 16px rgba(15,28,53,0.05)}
+.support-num{font-family:'Noto Serif JP',serif;font-size:26px;font-weight:700;color:rgba(15,28,53,0.07);margin-bottom:4px}
+.support-card h4{font-size:16px;font-weight:700;color:#162447;margin-bottom:8px}
+.support-card p{font-size:15px;color:#555;line-height:1.8;margin:0}
+.target-band{background:linear-gradient(135deg,#162447,#1a2f60);padding:48px 24px}
+.target-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:center}
+.target-head{font-family:'Noto Serif JP',serif;font-size:22px;font-weight:700;color:#c8a227;line-height:1.5}
+.target-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin:16px 0}
+.target-list li{font-size:15px;color:rgba(255,255,255,0.85);display:flex;align-items:flex-start;gap:10px;line-height:1.7}
+.target-list li::before{content:'✓';color:#c8a227;font-weight:700;flex-shrink:0;margin-top:2px}
+.target-note{font-size:13px;color:rgba(255,255,255,0.4);margin-top:18px;line-height:1.7;grid-column:1/-1}
+@media(max-width:680px){.target-inner{grid-template-columns:1fr}}
+.process-timeline{max-width:720px;margin:0 auto;position:relative;padding-left:20px}
+.process-timeline::before{content:'';position:absolute;left:21px;top:8px;bottom:8px;width:1px;background:linear-gradient(to bottom,#c8a227,rgba(200,162,39,0.15))}
+.tl-item{display:flex;gap:20px;margin-bottom:36px;position:relative}
+.tl-dot{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#162447,#1f4068);border:2px solid #c8a227;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#c8a227;font-size:13px;font-weight:700;z-index:1}
+.tl-body{flex:1;padding-top:8px}
+.tl-label{font-size:11px;color:#c8a227;font-weight:700;letter-spacing:0.08em;margin-bottom:3px}
+.tl-title{font-size:16px;font-weight:700;color:#162447;margin-bottom:6px}
+.tl-text{font-size:15px;color:#555;line-height:1.8}
+.theme-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:6px}
+.theme-item{display:flex;align-items:center;gap:8px;padding:10px 12px;border:1px solid rgba(255,255,255,0.1);border-radius:8px;cursor:pointer;transition:border .2s,background .2s;font-size:14px;color:rgba(255,255,255,0.75)}
+.theme-item input{width:16px;height:16px;accent-color:#c8a227;flex-shrink:0}
+.theme-item:has(input:checked){border-color:rgba(200,162,39,0.5);background:rgba(200,162,39,0.08)}
+@media(max-width:560px){.theme-grid{grid-template-columns:1fr}}
+.faq-list{max-width:820px;margin:0 auto}
+.faq-item{border:1px solid rgba(15,28,53,0.08);border-radius:10px;margin-bottom:12px;overflow:hidden;box-shadow:0 2px 8px rgba(15,28,53,0.03)}
+.faq-q{width:100%;text-align:left;background:#fff;border:none;padding:19px 22px;font-size:16px;font-weight:600;color:#162447;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .2s;line-height:1.6;font-family:inherit}
+.faq-q:hover{background:#f7f8fc}
+.faq-q .icon{color:#c8a227;font-size:18px;flex-shrink:0;margin-left:12px;font-style:normal}
+.faq-a{padding:0 22px;max-height:0;overflow:hidden;transition:max-height .38s,padding .3s;font-size:15px;color:#555;line-height:1.9;background:#f7f8fc}
+.faq-a.open{max-height:500px;padding:16px 22px}
+.form-grid{max-width:660px;margin:0 auto}
+.form-row{margin-bottom:20px}
+.form-row label{display:block;font-size:14px;font-weight:700;color:rgba(255,255,255,0.8);margin-bottom:6px}
+.form-row label .req{color:#e8bc30;font-size:12px;margin-left:4px}
+.form-row label .opt{color:rgba(255,255,255,0.35);font-size:12px;margin-left:4px}
+.form-row input,.form-row select,.form-row textarea{width:100%;padding:12px 14px;border:1px solid rgba(255,255,255,0.12);border-radius:8px;font-size:15px;font-family:inherit;transition:border .2s;background:rgba(255,255,255,0.07);color:#fff}
+.form-row input::placeholder,.form-row textarea::placeholder{color:rgba(255,255,255,0.3)}
+.form-row input:focus,.form-row select:focus,.form-row textarea:focus{outline:none;border-color:#c8a227;background:rgba(255,255,255,0.1)}
+.form-row textarea{min-height:96px;resize:vertical}
+.form-row select{-webkit-appearance:none;appearance:none;color:#fff;background:rgba(255,255,255,0.07) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c8a227' fill='none' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 14px center}
+.form-row select option{background:#162447;color:#fff}
+.form-chk{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:rgba(255,255,255,0.6);cursor:pointer;line-height:1.7}
+.form-chk input{width:18px;height:18px;accent-color:#c8a227;margin-top:2px;flex-shrink:0}
+.form-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-submit{display:block;width:100%;background:linear-gradient(135deg,#c8a227,#e8bc30);color:#0f1c35;font-size:16px;font-weight:700;padding:16px;border:none;border-radius:8px;cursor:pointer;letter-spacing:0.04em;transition:transform .2s,box-shadow .2s;margin-top:22px;font-family:inherit}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,162,39,0.35)}
+.form-submit:disabled{opacity:0.4;cursor:not-allowed;transform:none;box-shadow:none}
+.insight{background:linear-gradient(135deg,rgba(22,36,71,0.05),rgba(200,162,39,0.05));border:1px solid rgba(200,162,39,0.2);border-radius:12px;padding:24px 26px;margin:28px 0}
+.insight-label{font-size:11px;font-weight:700;letter-spacing:0.15em;color:#c8a227;text-transform:uppercase;margin-bottom:10px}
+.insight-text{font-size:15px;color:#162447;line-height:1.85;font-weight:500}
+.refs-acc{border:1px solid rgba(15,28,53,0.09);border-radius:10px;background:#fff;margin-top:28px;overflow:hidden}
+.refs-acc summary{cursor:pointer;list-style:none;padding:14px 20px;font-size:14px;font-weight:700;color:#888;display:flex;align-items:center;justify-content:space-between}
+.refs-acc summary::-webkit-details-marker{display:none}
+.refs-acc summary::after{content:'▼';font-size:11px;color:#c8a227}
+.refs-acc[open] summary::after{content:'▲'}
+.refs-body{padding:0 20px 20px;font-size:13px;color:#666;line-height:1.8}
+.refs-body a{color:#c8a227;word-break:break-all}
+footer{background:#060f1e;padding:26px 24px;text-align:center;color:rgba(255,255,255,0.28);font-size:13px;line-height:1.75}
+#floating-cta{position:fixed;bottom:28px;right:24px;z-index:999;background:linear-gradient(135deg,#c8a227,#e8bc30);color:#0f1c35;font-family:'Noto Serif JP',serif;font-weight:700;font-size:14px;padding:13px 22px;border-radius:50px;border:none;cursor:pointer;box-shadow:0 6px 22px rgba(200,162,39,0.38);transform:translateY(80px);opacity:0;transition:transform .35s cubic-bezier(.34,1.56,.64,1),opacity .3s;white-space:nowrap;letter-spacing:0.04em}
+#floating-cta.visible{transform:translateY(0);opacity:1}
+#submit-success{display:none;text-align:center;padding:80px 0}
+@media(max-width:768px){.nav-links{display:none}.profile-card{flex-direction:column}.profile-left{width:100%;padding:26px}.hero-stats{gap:18px}}
+@media(max-width:480px){.form-cols{grid-template-columns:1fr}.data-btn .pop{left:-20px;width:280px}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">企業型確定拠出年金（DC）導入支援</div>
+    <div class="nav-links" id="nav-links"></div>
+  </div>
+</nav>
+
+<!-- FLOATING CTA -->
+<button id="floating-cta" onclick="scrollTo('contact')">導入可否を相談する →</button>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-tag">企業型確定拠出年金 導入支援</div>
+  <h1 class="hero-title">経営戦略としての<br>選択制企業型確定拠出年金（DC）</h1>
+  <p class="hero-subtitle">採用・定着、トータルリワード、従業員のファイナンシャルウェルビーイングを支える、<br>会社の福利厚生。</p>
+  <span class="hero-target-tag">主な対象：従業員10〜100名規模の中小企業。10名以下・100名以上でも個別に導入可否を確認できます</span>
+  <div class="hero-cta-row">
+    <button class="btn-primary" onclick="scrollTo('dc-system')">制度概要を見る</button>
+    <button class="btn-outline" onclick="scrollTo('contact')">導入可否を相談する</button>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-num">拠出・運用・受取</div>
+      <div class="hero-stat-label">3段階の税制優遇</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">選択制設計</div>
+      <div class="hero-stat-label">会社拠出を伴わない設計も可能</div>
+      <div class="hero-stat-sub">追加原資を抑えた導入を検討できます</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">約6ヶ月</div>
+      <div class="hero-stat-label">標準的な導入準備期間</div>
+    </div>
+  </div>
+</section>
+
+<!-- DATA BAND -->
+<div class="data-band" id="data-band-section">
+  <div class="data-band-inner">
+    <div class="data-band-copy">
+      <h2>若手人材は、給与だけで<br>会社を選んでいるわけでは<br>ありません。</h2>
+      <p style="margin-top:14px">給与だけで大企業と競争するのは容易ではありません。だからこそ、福利厚生・金融教育・資産形成支援を通じて、若手人材に「この会社は将来のことまで考えてくれる」と伝えることが重要です。</p>
+    </div>
+    <div>
+      <div class="data-bars">
+        <div style="display:flex;justify-content:space-between;font-size:11px;color:#bbb;margin-bottom:6px;padding-right:2px">
+          <span>0%</span><span>25%</span><span>50%</span>
+        </div>
+        <div class="data-bar-item">
+          <div class="data-bar-label"><span>福利厚生の整備</span><span style="color:#c8a227">44.3%</span></div>
+          <div class="data-bar-track"><div class="data-bar-fill gold" id="bar1"></div></div>
+        </div>
+        <div class="data-bar-item" style="margin-top:12px">
+          <div class="data-bar-label"><span>給与の高さ</span><span style="color:#162447">39.8%</span></div>
+          <div class="data-bar-track"><div class="data-bar-fill navy" id="bar2"></div></div>
+        </div>
+      </div>
+      <p style="font-size:14px;color:#555;margin-top:18px;line-height:1.7">「福利厚生の整備」が「給与の高さ」を上回るという調査があります。採用競争において、福利厚生は重要な差別化要素の一つです。</p>
+      <div class="data-band-source">
+        出典：大和ライフネクスト株式会社「2025年卒・Z世代の就活トレンド 学生400人を調査」（2024年）<br>
+        ※ グラフの数値は上記調査によるものです。設問・対象により結果は異なります。傾向の参考としてご覧ください。
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROFILE -->
+<section class="bg-light" id="profile">
+  <div class="section-inner">
+    <p class="section-tag">Consultant Profile</p>
+    <h2 class="section-title">DCコンサルタント® プロフィール</h2>
+    <div class="section-divider"></div>
+    <div class="profile-card">
+      <div class="profile-left">
+        <img src="profile.jpg" alt="山田浩平" style="width:106px;height:106px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid #c8a227;box-shadow:0 4px 16px rgba(200,162,39,0.28);display:block;margin-bottom:18px;background:#1f4068" onerror="this.style.display='none'">
+        <div class="profile-name">山田 浩平</div>
+        <div class="profile-name-en">Kohei Yamada</div>
+        <span class="profile-badge">DCコンサルタント®</span>
+        <span class="profile-badge">ファイナンシャルプランナー</span>
+        <span class="profile-badge">二種外務員（IFA）</span>
+      </div>
+      <div class="profile-right">
+        <div class="profile-motto">「制度の力で、会社と従業員の将来を一緒につくる」</div>
+        <div class="profile-motto-sub">メリットだけでなく、注意点も含めて誠実にお伝えします。</div>
+        <div class="profile-label">資格・所属</div>
+        <ul class="profile-quals">
+          <li>二種外務員（IFA）</li>
+          <li>ファイナンシャル・プランニング技能士 2級</li>
+          <li>DCコンサルタント®</li>
+          <li><a href="https://www.financial-create.co.jp/" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;text-decoration-color:rgba(200,162,39,0.5)">株式会社フィナンシャルクリエイト</a></li>
+        </ul>
+        <div class="profile-label">経歴</div>
+        <p class="profile-career">1979年愛知県生まれ。早稲田大学法学部卒。大手プロバイダ、PR会社を経て、2010年に外資系金融機関へ。2015年に現在の会社に移り、DC導入支援歴7年以上です。制度設計から従業員説明会、金融教育、個別相談まで一貫してサポートしています。</p>
+        <p style="font-size:13px;color:#888;margin-top:10px;line-height:1.7">中小企業向けに、企業型確定拠出年金（DC）の導入支援、従業員説明会、金融教育、福利厚生・退職金制度・保障制度の整理を行っています。</p>
+        <div style="margin-top:20px;padding-top:16px;border-top:1px solid #f0f0f0">
+          <a href="https://my.prairie.cards/u/kohei.yamada" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;font-size:13px;color:#c8a227;border:1px solid rgba(200,162,39,0.35);border-radius:6px;padding:7px 14px;text-decoration:none">
+            プロフィールカードを見る →
+          </a>
+          <p style="font-size:12px;color:#aaa;margin-top:6px">スマートフォンで見やすいプロフィールページです。</p>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:800px;margin:20px auto 0;background:#fff;border:1px solid rgba(15,28,53,0.07);border-radius:14px;padding:26px 32px;box-shadow:0 4px 16px rgba(15,28,53,0.04)">
+      <div style="font-size:11px;font-weight:700;color:#c8a227;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:14px">山田浩平が支援していること</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px 24px;margin-bottom:16px">
+        <div style="font-size:14px;color:#444;display:flex;align-items:flex-start;gap:8px;padding:4px 0;line-height:1.6"><span style="color:#c8a227;font-weight:700;flex-shrink:0">・</span>企業型確定拠出年金（DC）の導入相談</div>
+        <div style="font-size:14px;color:#444;display:flex;align-items:flex-start;gap:8px;padding:4px 0;line-height:1.6"><span style="color:#c8a227;font-weight:700;flex-shrink:0">・</span>選択制DCの制度設計サポート</div>
+        <div style="font-size:14px;color:#444;display:flex;align-items:flex-start;gap:8px;padding:4px 0;line-height:1.6"><span style="color:#c8a227;font-weight:700;flex-shrink:0">・</span>従業員説明会・継続投資教育</div>
+        <div style="font-size:14px;color:#444;display:flex;align-items:flex-start;gap:8px;padding:4px 0;line-height:1.6"><span style="color:#c8a227;font-weight:700;flex-shrink:0">・</span>金融教育・資産形成セミナー</div>
+        <div style="font-size:14px;color:#444;display:flex;align-items:flex-start;gap:8px;padding:4px 0;line-height:1.6"><span style="color:#c8a227;font-weight:700;flex-shrink:0">・</span>福利厚生・退職金・保障制度の整理</div>
+        <div style="font-size:14px;color:#444;display:flex;align-items:flex-start;gap:8px;padding:4px 0;line-height:1.6"><span style="color:#c8a227;font-weight:700;flex-shrink:0">・</span>導入後の個別相談・フォロー</div>
+      </div>
+      <p style="font-size:13px;color:#aaa;line-height:1.7;border-top:1px solid #f0f0f0;padding-top:12px;margin:0">自社での導入相談だけでなく、関心のある企業さまのご紹介も歓迎しています。</p>
+    </div>
+    <div style="max-width:800px;margin:12px auto 0;padding:0 4px">
+      <p style="font-size:11.5px;color:#bbb;line-height:1.8">
+        ※ DCコンサルタント®の資格名称は一般社団法人DCコンサルタント協会の登録商標です。
+        <a href="https://dc-c.org/dc-consultant/" target="_blank" rel="noopener noreferrer" style="color:#c8a227;margin-left:4px">詳細はこちら</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ISSUES -->
+<section class="bg-white" id="issues">
+  <div class="section-inner">
+    <p class="section-tag">Issues</p>
+    <h2 class="section-title">中小企業の経営者が<br>直面している課題</h2>
+    <div class="section-divider"></div>
+    <p class="section-lead">採用・定着・福利厚生・従業員の将来不安——これらは、制度の整備で改善できる余地があります。</p>
+    <div class="cards-grid" id="issues-grid"></div>
+    <details class="refs-acc">
+      <summary>出典・参考URLを見る</summary>
+      <div class="refs-body">
+        <p style="margin-bottom:14px;color:#888">本ページで使用している数値・制度情報の主な参照元です。</p>
+        <div style="margin-bottom:10px">・大和ライフネクスト株式会社「2025年卒・Z世代の就活トレンド 学生400人を調査」（2024年）<br><span style="padding-left:12px;display:block"><a href="https://www.daiwalifenext.co.jp/news/274.html" target="_blank" rel="noopener noreferrer">https://www.daiwalifenext.co.jp/news/274.html</a></span></div>
+        <div style="margin-bottom:10px">・マイナビ「2025年卒大学生活動実態調査（4月）」（2024年）<br><span style="padding-left:12px;display:block"><a href="https://career-research.mynavi.jp/reserch/20240510_76471/" target="_blank" rel="noopener noreferrer">https://career-research.mynavi.jp/reserch/20240510_76471/</a></span></div>
+        <div style="margin-bottom:10px">・パーソル総合研究所・中央大学「労働市場の未来推計2035」<br><span style="padding-left:12px;display:block"><a href="https://rc.persol-group.co.jp/thinktank/spe/roudou2035/" target="_blank" rel="noopener noreferrer">https://rc.persol-group.co.jp/thinktank/spe/roudou2035/</a></span></div>
+        <div style="margin-bottom:10px">・金融経済教育推進機構（J-FLEC）「企業内教育の必要性」<br><span style="padding-left:12px;display:block"><a href="https://www.j-flec.go.jp/business/education/" target="_blank" rel="noopener noreferrer">https://www.j-flec.go.jp/business/education/</a></span></div>
+        <div style="margin-bottom:10px">・三菱UFJ信託銀行 資産形成研究所「金融リテラシー1万人調査の概要」<br><span style="padding-left:12px;display:block"><a href="https://www.tr.mufg.jp/shisan-ken/pdf/kinnyuu_literacy_12.pdf" target="_blank" rel="noopener noreferrer">https://www.tr.mufg.jp/shisan-ken/pdf/kinnyuu_literacy_12.pdf</a></span></div>
+        <div style="margin-bottom:10px">・経済産業省「人的資本可視化指針」（2022年）<br><span style="padding-left:12px;display:block"><a href="https://www.meti.go.jp/policy/economy/jinzai/activity/03_R4jinzaishihon_kashika.pdf" target="_blank" rel="noopener noreferrer">https://www.meti.go.jp/policy/economy/jinzai/activity/03_R4jinzaishihon_kashika.pdf</a></span></div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- TOTAL REWARD -->
+<section class="bg-light" id="total-reward">
+  <div class="section-inner">
+    <p class="section-tag">Total Reward</p>
+    <h2 class="section-title">福利厚生を<br>「見える報酬」に変える</h2>
+    <div class="section-divider"></div>
+    <p class="section-lead">給与や賞与だけが、会社が従業員に提供している価値ではありません。社会保険料の会社負担、退職金制度、福利厚生、教育支援、資産形成支援も、従業員にとって大切な報酬の一部です。</p>
+    <div class="win-win">
+      <div class="win-box">
+        <div class="win-box-title">金銭報酬</div>
+        <ul class="win-list">
+          <li>給与・賞与</li>
+          <li>退職金・企業年金</li>
+          <li>社会保険料の会社負担</li>
+        </ul>
+      </div>
+      <div class="win-box">
+        <div class="win-box-title">非金銭報酬・成長支援</div>
+        <ul class="win-list">
+          <li>福利厚生（住宅・休暇・育児支援）</li>
+          <li>金融教育・資産形成支援</li>
+          <li>個別相談・ライフプラン支援</li>
+          <li>働き方の柔軟性・キャリア支援</li>
+        </ul>
+      </div>
+    </div>
+    <div class="insight">
+      <div class="insight-label">トータルリワードの考え方</div>
+      <div class="insight-text">給与明細に載らない報酬を整理・可視化することで、従業員は「この会社がどれだけ自分のために動いてくれているか」を実感できます。会社への納得感・信頼感は、採用と定着の両方に影響します。</div>
+    </div>
+  </div>
+</section>
+
+<!-- FWB -->
+<section class="bg-dark" id="fwb">
+  <div class="section-inner">
+    <p class="section-tag" style="color:#c8a227">Financial Wellbeing</p>
+    <div class="section-divider"></div>
+    <div class="fwb-grid">
+      <div>
+        <div class="fwb-manifesto"><em>従業員のお金の不安は、</em><br>会社の力で<br>少し減らせる。</div>
+        <p class="fwb-lead">ファイナンシャルウェルビーイングとは、お金の面で安心し、将来を見通しながら自分らしい選択ができる状態を指します。資産の多い少ないではなく、「見通しが持てているか」が重要です。</p>
+        <p class="fwb-lead" style="margin-top:16px">老後資金、住宅、教育費、育休後の収入——従業員が抱えるお金の不安は多様です。こうした不安を放置すると、仕事への集中、会社への信頼、定着率にも影響が出かねません。</p>
+        <p class="fwb-lead" style="margin-top:16px">だからこそ私は、制度を導入するだけでなく、従業員一人ひとりが「自分のこととして理解できる」状態を創り出すことを、支援の核心だと考えています。企業型DCは、そのための有力な手段の一つです。</p>
+      </div>
+      <div class="fwb-cards">
+        <div class="fwb-card">
+          <div class="fwb-card-label">01 — 見通しを持てる状態をつくる</div>
+          <div class="fwb-card-title">老後の不安は、「知らない」から大きくなる</div>
+          <div class="fwb-card-text">制度の仕組みや積立の効果を理解するだけで、漠然とした不安が具体的な行動に変わる従業員は多いです。金融教育は、その最初の一歩です。</div>
+        </div>
+        <div class="fwb-card">
+          <div class="fwb-card-label">02 — 個別の事情に向き合う</div>
+          <div class="fwb-card-title">住宅購入予定、育休前後、転職直後——状況は人それぞれ</div>
+          <div class="fwb-card-text">制度の加入判断は、個人のライフプランによって正解が違います。「全員に同じ説明をして終わり」ではなく、個別相談まで対応することが重要です。</div>
+        </div>
+        <div class="fwb-card">
+          <div class="fwb-card-label">03 — 会社の姿勢として伝わる</div>
+          <div class="fwb-card-title">「この会社は将来のことまで考えてくれている」と感じさせる</div>
+          <div class="fwb-card-text">制度の有無だけでなく、説明会・相談機会の提供が、従業員にとっての会社評価につながります。ファイナンシャルウェルビーイングへの取り組みは、採用と定着の両方に効きます。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HISTORY -->
+<section class="bg-light" id="history">
+  <div class="section-inner">
+    <p class="section-tag">History</p>
+    <h2 class="section-title">国が整備してきた、<br>老後資産形成の制度</h2>
+    <div class="section-divider"></div>
+    <p class="section-lead">確定拠出年金は、単なる民間の金融商品ではなく、法律と税制に基づいて整備されてきた私的年金制度です。老後資産形成を支える仕組みとして、制度改正を重ねながら対象者や拠出枠が広がってきました。</p>
+    <div class="history-grid">
+      <div class="hist-card"><div class="hist-year">2001年</div><div class="hist-title">確定拠出年金法 施行</div><div class="hist-text">私的年金制度として誕生。</div></div>
+      <div class="hist-card"><div class="hist-year">2002年</div><div class="hist-title">個人型確定拠出年金 スタート</div><div class="hist-text">個人が加入できる仕組みが開始。</div></div>
+      <div class="hist-card"><div class="hist-year">2017年</div><div class="hist-title">iDeCoの対象者拡大</div><div class="hist-text">専業主婦・公務員なども加入可能に。</div></div>
+      <div class="hist-card"><div class="hist-year">2022年</div><div class="hist-title">加入可能年齢の拡大 等</div><div class="hist-text">企業型DC加入者のiDeCo利用要件緩和など、制度利用の幅が広がる。</div></div>
+      <div class="hist-card"><div class="hist-year">2024年</div><div class="hist-title">他制度加入者の拠出限度額を見直し</div><div class="hist-text">DB・共済等加入者のiDeCo上限が最大2万円に。</div></div>
+      <div class="hist-card"><div class="hist-year">2026年</div><div class="hist-title">拠出限度額等のさらなる改正へ</div><div class="hist-text">資産形成制度の見直しが進行中。</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DC SYSTEM -->
+<section class="bg-white" id="dc-system">
+  <div class="section-inner">
+    <p class="section-tag">System Overview</p>
+    <h2 class="section-title">選択制企業型確定拠出年金（DC）とは</h2>
+    <div class="section-divider"></div>
+    <p class="section-lead">
+      <span class="tip"><button class="tip-trigger">選択制企業型確定拠出年金（DC）</button><span class="tip-body">給与の一部を、従業員の選択で企業型DC掛金として拠出できる仕組みです。拠出分は老後資産として積み立てられ、運用は従業員本人が行います。</span></span>は、給与の一部をライフプラン手当等として設計し、従業員が「給与として受け取る」か「企業型DCの掛金として拠出する」かを選べる仕組みです。掛金として拠出した場合、税制上の優遇や運用益非課税などのメリットがあります。一方で、<span class="tip"><button class="tip-trigger">標準報酬月額</button><span class="tip-body">社会保険料や一部の公的給付額を算定する基準となる報酬区分です。給与から拠出すると下がる場合があります。</span></span>が変動する場合は、公的給付や将来の年金に影響する可能性があるため、導入前の丁寧な説明が重要となります。
+    </p>
+    <h3 style="font-family:'Noto Serif JP',serif;font-size:21px;font-weight:700;color:#162447;margin-bottom:18px">3段階の税制優遇</h3>
+    <div class="cards-grid" style="margin-bottom:32px">
+      <div class="card"><div style="font-size:11.5px;font-weight:700;color:#c8a227;letter-spacing:0.06em;margin-bottom:6px">① 拠出時</div><div class="card-title">掛金の所得控除</div><div class="card-text">掛金は税制上、所得控除の対象となります。所得税・住民税の負担が抑えられる場合があります。</div></div>
+      <div class="card"><div style="font-size:11.5px;font-weight:700;color:#c8a227;letter-spacing:0.06em;margin-bottom:6px">② 運用時</div><div class="card-title">運用益の非課税</div><div class="card-text">DC口座内の運用益は非課税で再投資されます。長期運用では、非課税メリットが積み重なります。</div></div>
+      <div class="card"><div style="font-size:11.5px;font-weight:700;color:#c8a227;letter-spacing:0.06em;margin-bottom:6px">③ 受取時</div><div class="card-title">退職所得控除・公的年金控除</div><div class="card-text">一時金は退職所得控除、年金形式は公的年金等控除の対象になります。受け取り方によって税負担は変わります。</div></div>
+    </div>
+    <details class="acc">
+      <summary>制度の主な特徴（詳しく見る）</summary>
+      <div class="acc-body">
+        <ul style="list-style:none;padding:0">
+          <li style="padding:8px 0;border-bottom:1px solid #f0f0f0;padding-left:22px;position:relative"><span style="position:absolute;left:0;color:#16a34a;font-weight:700">✓</span>従業員が加入・拠出額を自分で選択できます</li>
+          <li style="padding:8px 0;border-bottom:1px solid #f0f0f0;padding-left:22px;position:relative"><span style="position:absolute;left:0;color:#16a34a;font-weight:700">✓</span>掛金は税制上、所得控除の対象です</li>
+          <li style="padding:8px 0;border-bottom:1px solid #f0f0f0;padding-left:22px;position:relative"><span style="position:absolute;left:0;color:#16a34a;font-weight:700">✓</span>運用益は非課税です</li>
+          <li style="padding:8px 0;border-bottom:1px solid #f0f0f0;padding-left:22px;position:relative"><span style="position:absolute;left:0;color:#16a34a;font-weight:700">✓</span>原則60歳まで引き出せません（老後資金を確保するため）</li>
+          <li style="padding:8px 0;border-bottom:1px solid #f0f0f0;padding-left:22px;position:relative"><span style="position:absolute;left:0;color:#16a34a;font-weight:700">✓</span>標準報酬月額が変わる場合、公的給付や将来の年金に影響する可能性があります</li>
+          <li style="padding:8px 0;border-bottom:1px solid #f0f0f0;padding-left:22px;position:relative"><span style="position:absolute;left:0;color:#16a34a;font-weight:700">✓</span>転職時にも資産を持ち運べます（ポータビリティ）</li>
+          <li style="padding:8px 0;padding-left:22px;position:relative"><span style="position:absolute;left:0;color:#16a34a;font-weight:700">✓</span>導入時には従業員への丁寧な説明が重要です</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- SIMULATOR -->
+<section class="bg-light" id="simulator">
+  <div class="section-inner">
+    <p class="section-tag">Simulation</p>
+    <h2 class="section-title">手取り影響の概算シミュレーション</h2>
+    <div class="section-divider"></div>
+    <p class="section-lead">同じ金額を「銀行で貯める」か「DC掛金として給与から組み替える」か、税・社会保険料への影響を概算します。条件により結果は異なります。</p>
+    <div class="sim-wrap">
+      <div class="sim-grid">
+        <div class="sim-controls">
+          <h3>条件を入力</h3>
+          <p class="sim-hint">東京都・協会けんぽ／一般の事業／基礎控除のみの概算です</p>
+          <div class="sim-field">
+            <div class="sim-fl"><span class="sim-fl-label">現在の月例給与</span><span class="sim-fl-val" id="sal-val">300,000 <small>円</small></span></div>
+            <input type="range" class="sim-range" id="sal-range" min="160000" max="2500000" step="5000" value="300000">
+          </div>
+          <div class="sim-field">
+            <div class="sim-fl"><span class="sim-fl-label">毎月のDC掛金</span><span class="sim-fl-val" id="dc-val">20,000 <small>円</small></span></div>
+            <input type="range" class="sim-range" id="dc-range" min="3000" max="55000" step="1000" value="20000">
+          </div>
+          <label class="sim-chk"><input type="checkbox" id="kaigo-chk"> 介護保険の対象（40〜64歳）</label>
+          <label class="sim-chk" style="margin-top:10px"><input type="checkbox" id="newlimit-chk"> 2026年12月以降モード（月6.2万円）</label>
+          <div class="sim-chk-note">実際の上限額はプランにより異なります。</div>
+        </div>
+        <div class="sim-result">
+          <div class="sim-head">
+            <div class="cap">可処分所得差額の目安</div>
+            <div class="sim-big" id="sim-diff">0</div>
+            <div class="sub">円／月　・　年間 <b id="sim-diff-yr">0</b> 円</div>
+            <div class="near-note">表示額は概算です。条件により差額が小さくなる、出ない、またはマイナスになる場合があります。</div>
+          </div>
+          <div class="sim-cols">
+            <div class="sim-slip bank">
+              <h4>銀行預金で積立</h4>
+              <table><tbody>
+                <tr class="dim"><td>月例給与</td><td class="r" id="b-sal">-</td></tr>
+                <tr class="dim"><td>社会保険料</td><td class="r" id="b-si">-</td></tr>
+                <tr class="dim"><td>所得税・住民税</td><td class="r" id="b-tax">-</td></tr>
+                <tr><td>預金へ積立</td><td class="r" id="b-dc">-</td></tr>
+                <tr class="dispo"><td>可処分所得</td><td class="r" id="b-disp">-</td></tr>
+              </tbody></table>
+              <div class="sim-bar"><i id="b-bar" style="width:50%"></i></div>
+            </div>
+            <div class="sim-slip dc">
+              <h4>DC活用で積立</h4>
+              <table><tbody>
+                <tr class="dim"><td>新・月例給与</td><td class="r" id="d-sal">-</td></tr>
+                <tr class="dim"><td>社会保険料</td><td class="r" id="d-si">-</td></tr>
+                <tr class="dim"><td>所得税・住民税</td><td class="r" id="d-tax">-</td></tr>
+                <tr><td>DC口座へ積立</td><td class="r" id="d-dc">-</td></tr>
+                <tr class="dispo"><td>可処分所得</td><td class="r" id="d-disp">-</td></tr>
+              </tbody></table>
+              <div class="sim-bar"><i id="d-bar" style="width:50%"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sim-note">
+        <b>この試算は、制度の影響をイメージするための概算です。</b>実際の税額・社会保険料・手取り額は、年齢、扶養、給与体系、賞与、加入している健康保険、標準報酬月額の等級、各種控除により異なります。標準報酬月額が変わらない場合、社会保険料への影響が出ないこともあります。
+        <br><br>
+        <b>標準報酬月額が下がる場合、将来の厚生年金、傷病手当金、出産手当金、育児休業給付、雇用保険給付等に影響する可能性があります。</b>DC掛金拠出後の給与が最低賃金を下回らないようご留意ください。
+        <br><br>
+        表示している上限額は制度上の目安です。実際の拠出可能額は、導入する企業型DCプラン、運営管理機関、会社掛金、他の企業年金制度の有無等により異なる場合があります。
+        <br><br>
+        【算出根拠】協会けんぽ（東京都）保険料率・厚生年金保険料率（令和6年度）・雇用保険料率（一般の事業）・所得税速算表（復興特別所得税込）・住民税10%の概算値に基づきます。基準日：2024年度料率。<b>本シミュレーションはあくまでも概算であり、将来の運用成果を保証するものではありません。</b>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAUTIONS -->
+<section class="bg-white" id="cautions">
+  <div class="section-inner">
+    <p class="section-tag">Important Notes</p>
+    <h2 class="section-title">導入前に確認しておきたいこと</h2>
+    <div class="section-divider"></div>
+    <p class="section-lead">選択制企業型確定拠出年金（DC）は、税制優遇や資産形成支援のメリットがある一方で、給与体系や標準報酬月額に影響する場合があります。制度のメリットだけでなく、従業員ごとのライフイベントや公的給付への影響も確認したうえで導入することが大切です。</p>
+    <div class="caution-grid">
+      <div class="caution-card"><h4><span class="warn-dot"></span>社会保険料が変わらない場合もあります</h4><p>拠出額によって標準報酬月額の等級が変わらない場合、社会保険料が変動しないこともあります。</p></div>
+      <div class="caution-card"><h4><span class="warn-dot"></span>将来の厚生年金に影響する場合があります</h4><p>標準報酬月額が下がる場合、将来受け取る老齢厚生年金額に影響する可能性があります。</p></div>
+      <div class="caution-card"><h4><span class="warn-dot"></span>傷病手当金・出産手当金等に影響する場合があります</h4><p>標準報酬月額をもとに計算される一部の公的給付に影響する可能性があります。</p></div>
+      <div class="caution-card"><h4><span class="warn-dot"></span>住宅ローン審査に影響する場合があります</h4><p>源泉徴収票上の年収や返済比率の見え方に影響する場合があるため、住宅購入予定者は個別確認が必要です。</p></div>
+      <div class="caution-card"><h4><span class="warn-dot"></span>原則60歳まで引き出せません</h4><p>DCは老後資金を守る制度である一方、教育費・住宅資金・緊急資金として自由に引き出すことはできません。</p></div>
+      <div class="caution-card"><h4><span class="warn-dot"></span>従業員説明が重要です</h4><p>メリットだけでなく、注意点も含めて従業員が納得して選択できる説明会が必要です。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SUPPORT -->
+<section class="bg-light" id="support">
+  <div class="section-inner">
+    <p class="section-tag">Support</p>
+    <h2 class="section-title">制度導入だけで終わらせない、<br>従業員に伝わる支援を。</h2>
+    <div class="section-divider"></div>
+    <p class="section-lead">企業型DCは、制度を導入するだけでは十分に活用されにくいものです。従業員が制度の意味を理解し、自分に合った選択ができるように、導入前の設計から説明会、金融教育、個別相談、導入後フォローまで支援します。</p>
+    <p class="section-lead" style="margin-top:-20px">企業型DCの導入後は、加入者等への継続的な投資教育が事業主の努力義務とされています。従業員の資産形成不安に応え、制度を継続的に利用できる状態を創り出すことまで含めてサポートします。</p>
+    <div class="support-grid">
+      <div class="support-card"><div class="support-num">01</div><h4>導入可否の整理</h4><p>会社の規模、給与体系、従業員構成を確認し、選択制DCが適しているかを整理します。必要に応じて、企業型DCだけでなく、退職金制度、福利厚生、従業員向け金融教育、保障制度の整理まで確認します。</p></div>
+      <div class="support-card"><div class="support-num">02</div><h4>制度設計支援</h4><p>会社掛金の有無、ライフプラン手当の設計、既存の退職金制度との関係を整理します。</p></div>
+      <div class="support-card"><div class="support-num">03</div><h4>従業員説明会</h4><p>メリットだけでなく、注意点も含めて従業員が納得して選択できるよう説明します。</p></div>
+      <div class="support-card"><div class="support-num">04</div><h4>金融教育・投資教育</h4><p>NISA、iDeCo、企業型DCの違い、長期積立、リスクとの付き合い方をわかりやすく伝えます。従業員の不安や疑問に応える形で、継続的な投資教育にも対応します。</p></div>
+      <div class="support-card"><div class="support-num">05</div><h4>個別相談</h4><p>住宅購入、育休予定、年齢、家計状況など、従業員ごとの事情に応じた相談に対応します。</p></div>
+      <div class="support-card"><div class="support-num">06</div><h4>導入後フォロー</h4><p>制度開始後も、継続的な投資教育、個別相談、定期的な見直しを通じて、制度が活用される状態を支援します。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="bg-white" id="faq">
+  <div class="section-inner">
+    <p class="section-tag">FAQ</p>
+    <h2 class="section-title">よくあるご質問</h2>
+    <div class="section-divider"></div>
+    <div class="faq-list" id="faq-list"></div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="bg-light" id="process">
+  <div class="section-inner">
+    <p class="section-tag">Process</p>
+    <h2 class="section-title">導入プロセス（目安：6ヶ月）</h2>
+    <div class="section-divider"></div>
+    <p class="section-lead">制度導入までは、会社の現状整理、制度設計、規程整備、必要な手続き、従業員説明会を段階的に進めます。会社の規模や制度設計により期間は前後しますが、標準的には約6ヶ月を目安に準備します。</p>
+    <div class="process-timeline">
+      <div class="tl-item"><div class="tl-dot">01</div><div class="tl-body"><div class="tl-label">STEP 01</div><div class="tl-title">初回相談・ヒアリング</div><div class="tl-text">企業の現状・課題・従業員構成を把握し、制度設計の方向性を確認します。</div></div></div>
+      <div class="tl-item"><div class="tl-dot">02</div><div class="tl-body"><div class="tl-label">STEP 02</div><div class="tl-title">制度設計・就業規則改定</div><div class="tl-text">ライフプラン手当の設計、会社掛金の有無、既存制度との関係を整理し、必要に応じて就業規則・給与規程等を整備します。</div></div></div>
+      <div class="tl-item"><div class="tl-dot">03</div><div class="tl-body"><div class="tl-label">STEP 03</div><div class="tl-title">行政手続き・審査</div><div class="tl-text">厚生労働省・運営管理機関等への必要な手続きや審査対応を進めます。</div></div></div>
+      <div class="tl-item"><div class="tl-dot">04</div><div class="tl-body"><div class="tl-label">STEP 04</div><div class="tl-title">従業員説明会・金融教育</div><div class="tl-text">制度のメリット、注意点、運用商品の考え方をわかりやすく説明します。加入率向上だけでなく、従業員が納得して選択できる状態を目指します。</div></div></div>
+      <div class="tl-item"><div class="tl-dot">05</div><div class="tl-body"><div class="tl-label">STEP 05</div><div class="tl-title">制度開始・継続サポート</div><div class="tl-text">制度開始後も、定期的な投資教育、個別相談、制度活用状況の確認を通じて、継続的にサポートします。</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TARGET BAND -->
+<div class="target-band">
+  <div class="target-inner">
+    <div>
+      <div class="target-head">このような企業に<br>おすすめです</div>
+      <p style="font-size:13px;color:rgba(255,255,255,0.4);margin-top:14px;line-height:1.75">給与体系が比較的シンプルで、経営者が従業員一人ひとりの事情を把握しやすい規模感が、選択制DCの制度設計・従業員説明・個別相談と特に相性がよいです。</p>
+    </div>
+    <div>
+      <p style="font-size:15px;color:rgba(255,255,255,0.75);margin-bottom:16px;line-height:1.75">従業員10〜100名規模の中小企業に、特に相性のよい制度設計です。10名以下・100名以上の企業でも、給与体系や従業員構成により導入を検討できます。</p>
+      <ul class="target-list">
+        <li>採用・定着に課題がある</li>
+        <li>福利厚生を整えたい・見直したい</li>
+        <li>退職金制度を見直したい</li>
+        <li>従業員向け金融教育を始めたい</li>
+        <li>給与だけではない報酬設計を検討したい</li>
+        <li>社会保険料・人件費の構造を整理したい</li>
+      </ul>
+      <button class="btn-primary" onclick="scrollTo('contact')" style="margin-top:20px;font-size:14px">導入可否を相談する</button>
+    </div>
+    <p class="target-note">10名以下・100名以上の企業でも、給与体系や従業員構成によっては導入を検討できます。まずはお気軽にご相談ください。</p>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="bg-dark" id="contact">
+  <div class="section-inner">
+    <p class="section-tag" style="color:#c8a227;text-align:center">Contact</p>
+    <h2 style="font-family:'Noto Serif JP',serif;font-size:clamp(22px,4vw,30px);font-weight:700;color:#fff;text-align:center;margin-bottom:12px;line-height:1.45">制度導入の可否を、<br>まずは簡単に確認しませんか？</h2>
+    <div style="width:44px;height:2px;background:linear-gradient(to right,#c8a227,#e8bc30);margin:0 auto 20px;border-radius:2px"></div>
+    <p style="color:rgba(255,255,255,0.58);font-size:15px;line-height:1.85;text-align:center;margin-bottom:40px;max-width:600px;margin-left:auto;margin-right:auto">
+      選択制企業型確定拠出年金（DC）は、会社の規模、給与体系、従業員構成、既存の退職金制度によって向き不向きがあります。まずは現状をうかがったうえで、導入可能性と注意点を整理してご案内します。
+    </p>
+    <div id="contact-success" style="display:none;text-align:center;padding:40px 0">
+      <div style="font-size:44px;margin-bottom:18px;color:#c8a227">✓</div>
+      <h2 style="font-family:'Noto Serif JP',serif;font-size:26px;font-weight:700;color:#fff;margin-bottom:14px">お問い合わせありがとうございます</h2>
+      <p style="color:rgba(255,255,255,0.6);font-size:16px;line-height:1.85">内容を確認のうえ、折り返しご連絡いたします。</p>
+    </div>
+    <form class="form-grid" id="contact-form" onsubmit="handleSubmit(event)">
+      <div class="form-cols">
+        <div class="form-row"><label>お名前<span class="req">必須</span></label><input type="text" required placeholder="山田 太郎"></div>
+        <div class="form-row"><label>会社名<span class="req">必須</span></label><input type="text" required placeholder="株式会社○○"></div>
+      </div>
+      <div class="form-row"><label>メールアドレス<span class="req">必須</span></label><input type="email" required placeholder="info@example.co.jp"></div>
+      <div class="form-cols">
+        <div class="form-row"><label>役職<span class="opt">任意</span></label><input type="text" placeholder="代表取締役 / 人事部長 など"></div>
+        <div class="form-row"><label>電話番号<span class="opt">任意</span></label><input type="tel" placeholder="電話番号を入力してください"></div>
+      </div>
+      <div class="form-cols">
+        <div class="form-row"><label>従業員数<span class="opt">任意</span></label>
+          <select><option value="">選択してください</option><option>1〜5名</option><option>6〜10名</option><option>11〜30名</option><option>31〜50名</option><option>51〜100名</option><option>101名以上</option></select>
+        </div>
+        <div class="form-row"><label>折り返し可能な時間帯<span class="opt">任意</span></label>
+          <select><option value="">選択してください</option><option>午前</option><option>12〜15時</option><option>15〜18時</option><option>18時以降</option><option>メール連絡を希望</option></select>
+        </div>
+      </div>
+      <div class="form-row">
+        <label>気になっていることを選んでください<span class="opt">任意・複数選択可</span></label>
+        <p style="font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:10px">まだ整理できていなくても大丈夫です。</p>
+        <div class="theme-grid">
+          <label class="theme-item"><input type="checkbox">採用・定着に課題がある</label>
+          <label class="theme-item"><input type="checkbox">福利厚生を整えたい</label>
+          <label class="theme-item"><input type="checkbox">退職金制度を見直したい</label>
+          <label class="theme-item"><input type="checkbox">企業型DC・選択制DCについて知りたい</label>
+          <label class="theme-item"><input type="checkbox">従業員向け金融教育を始めたい</label>
+          <label class="theme-item"><input type="checkbox">社会保険料・人件費への影響を確認したい</label>
+          <label class="theme-item"><input type="checkbox">従業員説明会を相談したい</label>
+          <label class="theme-item"><input type="checkbox">福利厚生・保障制度全体を見直したい</label>
+          <label class="theme-item"><input type="checkbox">まずは導入できるか確認したい</label>
+          <label class="theme-item"><input type="checkbox">その他</label>
+        </div>
+      </div>
+      <div class="form-row"><label>お問い合わせ内容<span class="req">必須</span></label><textarea required placeholder="例：自社で企業型DCを検討したい／知人企業に紹介したい／従業員向け金融教育について聞きたい など"></textarea></div>
+      <div class="form-row">
+        <details style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;overflow:hidden">
+          <summary style="cursor:pointer;padding:13px 16px;font-size:14px;font-weight:700;color:rgba(255,255,255,0.7);list-style:none;display:flex;justify-content:space-between;align-items:center">
+            <span>個人情報の取扱いについて</span><span style="color:#c8a227;font-size:11px">▼</span>
+          </summary>
+          <div style="padding:0 16px 16px;font-size:13.5px;color:rgba(255,255,255,0.55);line-height:1.85">
+            <p>山田浩平は、お問い合わせフォームに入力いただいた個人情報を、以下の目的で利用します。</p>
+            <ol style="padding-left:18px;margin-top:10px;margin-bottom:10px">
+              <li>お問い合わせへの回答</li>
+              <li>企業型確定拠出年金（DC）導入支援に関するご連絡</li>
+              <li>初回相談・打ち合わせの日程調整</li>
+              <li>ご相談内容に応じた資料・情報の提供</li>
+              <li>福利厚生制度、退職金制度、従業員向け金融教育、資産形成支援、保障制度等に関する情報提供</li>
+            </ol>
+            <p>取得する情報は、お名前、会社名、メールアドレス、電話番号、役職、従業員数、お問い合わせ内容、相談テーマ等です。</p>
+            <p style="margin-top:8px">取得した個人情報は、法令に基づく場合を除き、ご本人の同意なく第三者へ提供しません。</p>
+            <p style="margin-top:8px">お問い合わせ対応のため、必要な範囲で、所属先または業務委託先と情報を共有する場合があります。その場合も、適切な管理を行います。</p>
+            <p style="margin-top:8px">個人情報の開示、訂正、利用停止、削除等を希望される場合は、お問い合わせ時にご連絡ください。</p>
+            <p style="margin-top:8px">送信前に上記内容をご確認のうえ、「個人情報の取扱いに同意します」にチェックを入れてください。</p>
+          </div>
+        </details>
+      </div>
+      <div class="form-row"><label class="form-chk"><input type="checkbox" id="agree-chk" onchange="document.getElementById('submit-btn').disabled=!this.checked"> 個人情報の取扱いに同意します</label></div>
+      <button type="submit" class="form-submit" id="submit-btn" disabled>導入可否を相談する</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 DCコンサルタント® 山田浩平 ｜ 二種外務員（IFA）・ファイナンシャル・プランニング技能士2級</p>
+  <p style="margin-top:8px">本サイトは一般的な情報提供を目的としており、投資勧誘を目的としたものではありません。実際の制度設計、税務、社会保険、労務上の取扱いは、会社の状況や従業員構成により異なります。導入にあたっては、専門家へ個別にご相談ください。</p>
+</footer>
+
+<script>
+// ── HELPERS ──────────────────────────────────────────────────────────
+function scrollTo(id) {
+  var el = document.getElementById(id);
+  if (el) window.scrollTo({ top: el.offsetTop - 56, behavior: 'smooth' });
+}
+function fmt(n) { return Math.round(n).toLocaleString('ja-JP'); }
+
+// ── NAV ──────────────────────────────────────────────────────────────
+var NAV_ITEMS = [
+  { id:'hero', label:'TOP' },
+  { id:'issues', label:'経営課題' },
+  { id:'dc-system', label:'制度概要' },
+  { id:'simulator', label:'手取り試算' },
+  { id:'cautions', label:'注意事項' },
+  { id:'support', label:'導入支援' },
+  { id:'contact', label:'お問い合わせ' },
+];
+var navLinks = document.getElementById('nav-links');
+NAV_ITEMS.forEach(function(item) {
+  var btn = document.createElement('button');
+  btn.className = 'nav-link';
+  btn.id = 'nav-' + item.id;
+  btn.textContent = item.label;
+  btn.onclick = function() { scrollTo(item.id); };
+  navLinks.appendChild(btn);
+});
+
+// ── INTERSECTION OBSERVER (nav active + bar animation) ───────────────
+var barAnimated = false;
+var io = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) {
+      // nav active
+      document.querySelectorAll('.nav-link').forEach(function(b) { b.classList.remove('active'); });
+      var nb = document.getElementById('nav-' + e.target.id);
+      if (nb) nb.classList.add('active');
+      // bar animation
+      if (e.target.id === 'data-band-section' && !barAnimated) {
+        barAnimated = true;
+        setTimeout(function() {
+          document.getElementById('bar1').style.width = '44.3%';
+          document.getElementById('bar2').style.width = '39.8%';
+        }, 100);
+      }
+    }
+  });
+}, { threshold: 0.25 });
+['hero','profile','issues','total-reward','fwb','history','dc-system','simulator','cautions','support','faq','process','contact','data-band-section'].forEach(function(id) {
+  var el = document.getElementById(id);
+  if (el) io.observe(el);
+});
+
+// ── FLOATING CTA ─────────────────────────────────────────────────────
+var floatBtn = document.getElementById('floating-cta');
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 400) floatBtn.classList.add('visible');
+  else floatBtn.classList.remove('visible');
+});
+
+// ── ISSUES CARDS ─────────────────────────────────────────────────────
+var CARDS = [
+  { num:'01', tag:'人材戦略', title:'採用難・人材定着',
+    text:'中小企業では人材確保が難しくなっており、採用できても早期離職が大きな損失になります。給与だけでなく、将来への安心感や福利厚生の整備が、選ばれる会社づくりに関わります。',
+    pop:'少子高齢化による生産年齢人口の急減により、中小企業の採用環境は今後さらに厳しくなると見込まれています。給与水準だけで大企業と競争するのが難しい場合、福利厚生や将来支援は「選ばれる理由」の一つになります。\n\n参考：2035年には2023年比で約2倍の労働力不足が予測されるという推計があります。',
+    src:'パーソル総合研究所・中央大学「労働市場の未来推計2035」' },
+  { num:'02', tag:'福利厚生', title:'福利厚生で選ばれる時代',
+    text:'若手・新入社員は、給与水準だけでなく、福利厚生や将来への安心感も見ています。退職金制度、企業型DC、金融教育、資産形成支援は、「この会社は従業員の将来まで考えている」と伝える材料になります。',
+    pop:'若手・新卒採用では、給与だけでなく福利厚生も重視されています。大卒学生の企業選びでは、「福利厚生の整備」44.3%が「給与の高さ」39.8%を上回るという調査があります。また、選考参加の決め手でも「福利厚生が手厚い」51.5%が「給与が高い」42.6%を上回るというデータがあります。',
+    src:'大和ライフネクスト（44.3% vs 39.8%）、マイナビ（51.5% vs 42.6%）' },
+  { num:'03', tag:'財務負担', title:'社会保険料・人件費負担の増加',
+    text:'賃上げは重要ですが、給与を上げるほど会社の社会保険料負担も増えます。人件費全体を見ながら、従業員にとって価値ある還元方法を設計することが重要です。',
+    pop:'給与を上げると、従業員本人の手取りだけでなく、会社側の社会保険料負担も変わります。だからこそ、給与・賞与だけでなく、福利厚生や資産形成支援を含めた「総報酬」で考えることが重要です。\n\n補足：社会保険料は従業員本人だけでなく、会社も一定割合を負担します。',
+    src:'厚生労働省 制度資料、日本年金機構 制度説明資料' },
+  { num:'04', tag:'エンゲージメント', title:'福利厚生が従業員に伝わっていない',
+    text:'会社が負担している社会保険料、退職金、福利厚生、教育支援などは、従業員にとって見えにくい報酬です。トータルリワードとして見える化することで、会社への納得感や信頼感につながります。',
+    pop:'従業員が普段意識しやすいのは給与・賞与ですが、会社はそれ以外にも社会保険料の会社負担、退職金・企業年金、福利厚生、教育支援などを提供しています。これらを見える化する考え方が「トータルリワード」です。',
+    src:'経済産業省「人的資本可視化指針」（2022年）' },
+  { num:'05', tag:'老後不安', title:'従業員の老後・資産形成不安',
+    text:'老後資金や将来のお金への不安は、多くの現役世代に共通するテーマです。会社が資産形成のきっかけを提供することは、従業員の安心感を支える福利厚生になります。',
+    pop:'老後資金や将来のお金への不安は、多くの現役世代に共通するテーマです。労働者の83.2%が老後の生活設計に不安を抱えているというデータもあります。企業型DCは、会社が従業員の将来不安に向き合う制度の一つです。',
+    src:'各種ファイナンシャルウェルビーイング関連調査（国内外）' },
+  { num:'06', tag:'金融教育', title:'金融教育ニーズの高まり',
+    text:'従業員の多くは、老後資金や資産形成に不安を感じています。制度を用意するだけでなく、金融教育や個別相談を通じて、従業員が自分に合った選択をできる状態をつくることが重要です。',
+    pop:'企業型DCを導入した事業主には、加入者等への継続的な投資教育の努力義務があります。ただし、これは単なる義務ではありません。従業員側にも老後資金や資産形成への不安があり、金融教育や相談機会はその不安を軽減する支援になります。\n\nJ-FLECでは、企業内での資産形成・金融リテラシー研修が、採用やリテンション強化に寄与し得ると整理されています。',
+    src:'J-FLEC「企業内教育の必要性」' },
+];
+var grid = document.getElementById('issues-grid');
+CARDS.forEach(function(c) {
+  var d = document.createElement('div');
+  d.className = 'card';
+  d.innerHTML = '<div class="card-num">' + c.num + '</div>'
+    + '<div class="card-tag">' + c.tag + '</div>'
+    + '<div class="card-title">' + c.title + '</div>'
+    + '<div class="card-text">' + c.text + '</div>'
+    + '<button class="data-btn" onclick="togglePop(this)">'
+    + 'データを見る ⓘ'
+    + '<span class="pop">' + c.pop.replace(/\n/g,'<br>') + '<div class="pop-src">参考：' + c.src + '</div></span>'
+    + '</button>';
+  grid.appendChild(d);
+});
+function togglePop(btn) {
+  btn.classList.toggle('open');
+  document.querySelectorAll('.data-btn.open').forEach(function(b) {
+    if (b !== btn) b.classList.remove('open');
+  });
+}
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.data-btn')) {
+    document.querySelectorAll('.data-btn.open').forEach(function(b) { b.classList.remove('open'); });
+  }
+});
+
+// ── FAQ ──────────────────────────────────────────────────────────────
+var FAQ = [
+  { q:'加入は強制ですか？', a:'いいえ。選択制企業型確定拠出年金（DC）は、従業員が自分で加入するかどうか、いくら拠出するかを選べる設計が基本です。加入しない選択もできます。' },
+  { q:'会社の追加負担は必ず必要ですか？', a:'会社掛金を設定する設計もありますが、会社拠出を伴わない選択制設計も可能です。ただし、制度導入や運営に関する事務・規程整備・従業員への説明は必要になります。' },
+  { q:'社会保険料は必ず下がりますか？', a:'必ず下がるわけではありません。標準報酬月額の等級が変わる場合に、社会保険料が変動することがあります。等級が変わらなければ、保険料は変わりません。' },
+  { q:'従業員にデメリットはありますか？', a:'あります。標準報酬月額が下がる場合、将来の厚生年金、傷病手当金、出産手当金、育児休業給付などに影響する可能性があります。また、DC掛金は原則60歳まで引き出せません。' },
+  { q:'住宅ローンに影響しますか？', a:'影響する可能性があります。源泉徴収票上の年収や返済比率の見え方に影響する場合があるため、住宅購入を予定している従業員は個別確認が必要です。' },
+  { q:'従業員説明会は必要ですか？', a:'必要です。選択制DCは従業員が自分で選ぶ制度であるため、メリットだけでなく注意点も含めて理解できる説明が重要です。' },
+  { q:'導入までどれくらいかかりますか？', a:'会社の状況や制度設計によりますが、就業規則・規程整備、従業員説明、制度手続きなどを含め、一定の準備期間が必要です。まずは導入可否とスケジュールを確認します。' },
+  { q:'掛金の上限は月6.2万円まで使えますか？', a:'制度上の上限は、2026年12月以降、月6.2万円を基本に見直される予定です。ただし、実際に拠出できる金額は、導入する企業型DCプラン、会社掛金、他の企業年金制度の有無、運営管理機関の仕様等によって異なる場合があります。導入前に個別確認が必要です。' },
+];
+var faqList = document.getElementById('faq-list');
+FAQ.forEach(function(item, i) {
+  var wrap = document.createElement('div');
+  wrap.className = 'faq-item';
+  wrap.innerHTML = '<button class="faq-q" id="faq-q-' + i + '" onclick="toggleFaq(' + i + ')">'
+    + '<span>' + item.q + '</span><span class="icon" id="faq-icon-' + i + '">＋</span>'
+    + '</button>'
+    + '<div class="faq-a" id="faq-a-' + i + '">' + item.a + '</div>';
+  faqList.appendChild(wrap);
+});
+function toggleFaq(i) {
+  var a = document.getElementById('faq-a-' + i);
+  var q = document.getElementById('faq-q-' + i);
+  var icon = document.getElementById('faq-icon-' + i);
+  var isOpen = a.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(function(el) { el.classList.remove('open'); });
+  document.querySelectorAll('.faq-q').forEach(function(el) { el.classList.remove('open'); });
+  document.querySelectorAll('.icon').forEach(function(el) { el.textContent = '＋'; });
+  if (!isOpen) {
+    a.classList.add('open');
+    q.classList.add('open');
+    icon.textContent = '−';
+  }
+}
+
+// ── SIMULATOR ────────────────────────────────────────────────────────
+var GRADES = [[0,58000],[63000,68000],[73000,78000],[83000,88000],[93000,98000],[101000,104000],[107000,110000],[114000,118000],[122000,126000],[130000,134000],[138000,142000],[146000,150000],[155000,160000],[165000,170000],[175000,180000],[185000,190000],[195000,200000],[210000,220000],[230000,240000],[250000,260000],[270000,280000],[290000,300000],[310000,320000],[330000,340000],[350000,360000],[370000,380000],[395000,410000],[425000,440000],[455000,470000],[485000,500000],[515000,530000],[545000,560000],[575000,590000],[605000,620000],[635000,650000],[665000,680000],[695000,710000],[730000,750000],[770000,790000],[810000,830000],[855000,880000],[905000,930000],[955000,980000],[1005000,1030000],[1055000,1090000],[1115000,1150000],[1175000,1210000],[1235000,1270000],[1295000,1330000],[1355000,1390000]];
+var RP=0.0915, RH=0.0499, RK=0.0091, RE=0.006;
+function smrH(r){var s=58000;for(var i=0;i<GRADES.length;i++)if(r>=GRADES[i][0])s=GRADES[i][1];return s}
+function smrP(r){return Math.min(Math.max(smrH(r),88000),650000)}
+function si(sal,k){return Math.round(smrP(sal)*RP)+Math.round(smrH(sal)*RH)+(k?Math.round(smrH(sal)*RK):0)+Math.round(sal*RE)}
+function kc(a){if(a<=1625000)return 550000;if(a<=1800000)return Math.round(a*0.4)-100000;if(a<=3600000)return Math.round(a*0.3)+80000;if(a<=6600000)return Math.round(a*0.2)+440000;if(a<=8500000)return Math.round(a*0.1)+1100000;return 1950000}
+function itax(t){t=Math.max(0,Math.floor(t/1000)*1000);var x;if(t<=1950000)x=t*0.05;else if(t<=3300000)x=t*0.1-97500;else if(t<=6950000)x=t*0.2-427500;else if(t<=9000000)x=t*0.23-636000;else if(t<=18000000)x=t*0.33-1536000;else if(t<=40000000)x=t*0.40-2796000;else x=t*0.45-4796000;return Math.max(0,Math.round(x*1.021))}
+function taxM(sal,s){var a=sal*12,sa=s*12,inc=a-kc(a);var it1=itax(Math.max(0,inc-sa-480000));var jt=Math.max(0,Math.round(Math.max(0,inc-sa-430000)*0.1)+5000-2500);return Math.round((it1+jt)/12)}
+
+function calcSim() {
+  var salary = +document.getElementById('sal-range').value;
+  var dcInput = +document.getElementById('dc-range').value;
+  var kaigo = document.getElementById('kaigo-chk').checked;
+  var newLimit = document.getElementById('newlimit-chk').checked;
+  var dcMax = newLimit ? 62000 : 55000;
+  document.getElementById('dc-range').max = dcMax;
+  if (dcInput > dcMax) { document.getElementById('dc-range').value = dcMax; dcInput = dcMax; }
+  var actualDc = Math.min(dcInput, dcMax, Math.max(3000, salary - 30000));
+  document.getElementById('sal-val').innerHTML = fmt(salary) + ' <small>円</small>';
+  document.getElementById('dc-val').innerHTML = fmt(actualDc) + ' <small>円</small>';
+  var bSi=si(salary,kaigo), bTax=taxM(salary,bSi), bDisp=salary-bSi-bTax-actualDc;
+  var nSal=salary-actualDc, dSi=si(nSal,kaigo), dTax=taxM(nSal,dSi), dDisp=nSal-dSi-dTax;
+  var diff=dDisp-bDisp, maxDisp=Math.max(bDisp,dDisp);
+  var diffEl = document.getElementById('sim-diff');
+  diffEl.textContent = fmt(diff);
+  diffEl.style.color = diff >= 0 ? '#16a34a' : '#d97706';
+  document.getElementById('sim-diff-yr').textContent = fmt(diff*12);
+  document.getElementById('b-sal').textContent = fmt(salary);
+  document.getElementById('b-si').textContent = fmt(bSi);
+  document.getElementById('b-tax').textContent = fmt(bTax);
+  document.getElementById('b-dc').textContent = fmt(actualDc);
+  document.getElementById('b-disp').textContent = fmt(bDisp);
+  document.getElementById('d-sal').textContent = fmt(nSal);
+  document.getElementById('d-si').textContent = fmt(dSi);
+  document.getElementById('d-tax').textContent = fmt(dTax);
+  document.getElementById('d-dc').textContent = fmt(actualDc);
+  document.getElementById('d-disp').textContent = fmt(dDisp);
+  document.getElementById('b-bar').style.width = (maxDisp > 0 ? bDisp/maxDisp*100 : 50) + '%';
+  document.getElementById('d-bar').style.width = (maxDisp > 0 ? dDisp/maxDisp*100 : 50) + '%';
+}
+document.getElementById('sal-range').addEventListener('input', calcSim);
+document.getElementById('dc-range').addEventListener('input', calcSim);
+document.getElementById('kaigo-chk').addEventListener('change', calcSim);
+document.getElementById('newlimit-chk').addEventListener('change', calcSim);
+calcSim();
+
+// ── FORM ─────────────────────────────────────────────────────────────
+function handleSubmit(e) {
+  e.preventDefault();
+  document.getElementById('contact-form').style.display = 'none';
+  document.getElementById('contact-success').style.display = 'block';
+}
+</script>
+</body>
+</html>
