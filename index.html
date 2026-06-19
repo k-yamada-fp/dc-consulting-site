@@ -140,6 +140,7 @@ section{padding:80px 24px}
 .sim-head .cap{font-size:13.5px;color:#888;font-weight:700}
 .sim-big{font-size:42px;font-weight:700;line-height:1.1;margin:0;display:inline-block}
 .sim-year-line{display:flex;align-items:baseline;justify-content:center;gap:6px;margin:8px 0 4px;white-space:nowrap;flex-wrap:nowrap;min-width:0}
+.sim-year-label{font-size:18px;font-weight:700;color:#888}
 .sim-year-unit{font-size:16px;font-weight:700;color:#888}
 .sim-head .sub{font-size:13.5px;color:#888}
 .sim-head .sub b{color:#16a34a}
@@ -519,13 +520,14 @@ footer{background:#060f1e;padding:26px 24px;text-align:center;color:rgba(255,255
             <input type="range" class="sim-range" id="dc-range" min="3000" max="55000" step="1000" value="20000">
           </div>
           <label class="sim-chk"><input type="checkbox" id="kaigo-chk"> 介護保険の対象（40〜64歳）</label>
+          <div class="sim-chk-note" style="margin-top:4px">40〜64歳の方は健康保険料に介護保険料が上乗せされるため、社会保険料と可処分所得差額の概算が変わります。</div>
           <label class="sim-chk" style="margin-top:10px"><input type="checkbox" id="newlimit-chk"> 2026年12月以降モード（月6.2万円）</label>
           <div class="sim-chk-note">実際の上限額はプランにより異なります。</div>
         </div>
         <div class="sim-result">
           <div class="sim-head">
             <div class="cap">可処分所得差額の目安</div>
-            <div class="sim-year-line"><span class="sim-big" id="sim-diff">0</span><span class="sim-year-unit">円／年</span></div>
+            <div class="sim-year-line"><span class="sim-year-label">年間</span><span class="sim-big" id="sim-diff">0</span><span class="sim-year-unit">円</span></div>
             <div class="sub">月額 <b id="sim-diff-mo">0</b> 円</div>
             <div class="near-note">表示額は概算です。条件により差額が小さくなる、出ない、またはマイナスになる場合があります。</div>
           </div>
