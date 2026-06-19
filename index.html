@@ -10,12 +10,13 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
+section,.data-band{scroll-margin-top:70px}
 body{font-family:'Noto Sans JP',sans-serif;background:#0f1c35;color:#1a1a2e;overflow-x:hidden;font-size:16px;line-height:1.8}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,28,53,0.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(200,162,39,0.18);padding:0 20px}
 .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px;gap:8px}
 .nav-logo{color:#c8a227;font-size:13px;font-weight:700;letter-spacing:0.05em;white-space:nowrap;flex-shrink:0}
 .nav-links{display:flex;gap:2px;flex-wrap:nowrap}
-.nav-link{color:rgba(255,255,255,0.6);font-size:12px;padding:5px 9px;border-radius:4px;cursor:pointer;transition:all .2s;border:none;background:none;white-space:nowrap;font-family:inherit}
+.nav-link{display:inline-block;text-decoration:none;color:rgba(255,255,255,0.6);font-size:12px;padding:5px 9px;border-radius:4px;cursor:pointer;transition:all .2s;border:none;background:none;white-space:nowrap;font-family:inherit}
 .nav-link:hover,.nav-link.active{color:#c8a227;background:rgba(200,162,39,0.1)}
 .hero{min-height:100vh;background:linear-gradient(140deg,#0a1628 0%,#162447 55%,#1d2f5c 100%);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:90px 24px 70px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 80% 20%,rgba(200,162,39,0.07),transparent)}
@@ -24,9 +25,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,28,53,0.9
 .hero-subtitle{font-size:clamp(14px,2vw,18px);color:rgba(255,255,255,0.62);margin-bottom:24px;line-height:1.85;max-width:580px}
 .hero-target-tag{background:rgba(200,162,39,0.12);border:1px solid rgba(200,162,39,0.3);color:rgba(255,255,255,0.7);font-size:12px;padding:5px 16px;border-radius:20px;letter-spacing:0.04em;display:inline-block;margin-bottom:30px}
 .hero-cta-row{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-bottom:58px}
-.btn-primary{background:linear-gradient(135deg,#c8a227,#e8bc30);color:#0f1c35;font-size:15px;font-weight:700;padding:14px 30px;border-radius:6px;border:none;cursor:pointer;letter-spacing:0.04em;transition:transform .2s,box-shadow .2s;font-family:inherit}
+.btn-primary{display:inline-block;text-decoration:none;background:linear-gradient(135deg,#c8a227,#e8bc30);color:#0f1c35;font-size:15px;font-weight:700;padding:14px 30px;border-radius:6px;border:none;cursor:pointer;letter-spacing:0.04em;transition:transform .2s,box-shadow .2s;font-family:inherit}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,162,39,0.35)}
-.btn-outline{background:transparent;color:#fff;font-size:15px;font-weight:500;padding:14px 30px;border-radius:6px;border:1px solid rgba(255,255,255,0.28);cursor:pointer;transition:all .2s;font-family:inherit}
+.btn-outline{display:inline-block;text-decoration:none;background:transparent;color:#fff;font-size:15px;font-weight:500;padding:14px 30px;border-radius:6px;border:1px solid rgba(255,255,255,0.28);cursor:pointer;transition:all .2s;font-family:inherit}
 .btn-outline:hover{border-color:#c8a227;color:#c8a227}
 .hero-stats{display:flex;gap:36px;flex-wrap:wrap;justify-content:center}
 .hero-stat{text-align:center}
@@ -136,7 +137,9 @@ section{padding:80px 24px}
 .sim-result{padding:30px 28px;background:#f7f8fc}
 .sim-head{text-align:center;padding:6px 0 14px;border-bottom:1px dashed #dde0ea;margin-bottom:16px}
 .sim-head .cap{font-size:13.5px;color:#888;font-weight:700}
-.sim-big{font-size:42px;font-weight:700;line-height:1.1;margin:8px 0 4px}
+.sim-big{font-size:42px;font-weight:700;line-height:1.1;margin:0}
+.sim-year-line{display:flex;align-items:baseline;justify-content:center;gap:6px;margin:8px 0 4px;white-space:nowrap}
+.sim-year-unit{font-size:16px;font-weight:700;color:#888}
 .sim-head .sub{font-size:13.5px;color:#888}
 .sim-head .sub b{color:#16a34a}
 .sim-head .near-note{font-size:12px;color:#aaa;margin-top:8px;line-height:1.6}
@@ -222,7 +225,7 @@ section{padding:80px 24px}
 .refs-body{padding:0 20px 20px;font-size:13px;color:#666;line-height:1.8}
 .refs-body a{color:#c8a227;word-break:break-all}
 footer{background:#060f1e;padding:26px 24px;text-align:center;color:rgba(255,255,255,0.28);font-size:13px;line-height:1.75}
-#floating-cta{position:fixed;bottom:28px;right:24px;z-index:999;background:linear-gradient(135deg,#c8a227,#e8bc30);color:#0f1c35;font-family:'Noto Serif JP',serif;font-weight:700;font-size:14px;padding:13px 22px;border-radius:50px;border:none;cursor:pointer;box-shadow:0 6px 22px rgba(200,162,39,0.38);transform:translateY(80px);opacity:0;transition:transform .35s cubic-bezier(.34,1.56,.64,1),opacity .3s;white-space:nowrap;letter-spacing:0.04em}
+#floating-cta{text-decoration:none;display:inline-block;position:fixed;bottom:28px;right:24px;z-index:999;background:linear-gradient(135deg,#c8a227,#e8bc30);color:#0f1c35;font-family:'Noto Serif JP',serif;font-weight:700;font-size:14px;padding:13px 22px;border-radius:50px;border:none;cursor:pointer;box-shadow:0 6px 22px rgba(200,162,39,0.38);transform:translateY(80px);opacity:0;transition:transform .35s cubic-bezier(.34,1.56,.64,1),opacity .3s;white-space:nowrap;letter-spacing:0.04em}
 #floating-cta.visible{transform:translateY(0);opacity:1}
 #submit-success{display:none;text-align:center;padding:80px 0}
 @media(max-width:768px){.nav-links{display:none}.profile-card{flex-direction:column}.profile-left{width:100%;padding:26px}.hero-stats{gap:18px}}
@@ -240,7 +243,7 @@ footer{background:#060f1e;padding:26px 24px;text-align:center;color:rgba(255,255
 </nav>
 
 <!-- FLOATING CTA -->
-<button id="floating-cta" onclick="scrollToSection('contact')">導入可否を相談する →</button>
+<a id="floating-cta" href="#contact">導入可否を相談する →</a>
 
 <!-- HERO -->
 <section class="hero" id="hero">
@@ -249,8 +252,7 @@ footer{background:#060f1e;padding:26px 24px;text-align:center;color:rgba(255,255
   <p class="hero-subtitle">採用・定着、トータルリワード、従業員のファイナンシャルウェルビーイングを支える、<br>会社の福利厚生。</p>
   <span class="hero-target-tag">主な対象：従業員10〜100名規模の中小企業。10名以下・100名以上でも個別に導入可否を確認できます</span>
   <div class="hero-cta-row">
-    <button class="btn-primary" onclick="scrollToSection('dc-system')">制度概要を見る</button>
-    <button class="btn-outline" onclick="scrollToSection('contact')">導入可否を相談する</button>
+    <a class="btn-primary" href="#dc-system">制度概要を見る</a>
   </div>
   <div class="hero-stats">
     <div class="hero-stat">
@@ -522,8 +524,8 @@ footer{background:#060f1e;padding:26px 24px;text-align:center;color:rgba(255,255
         <div class="sim-result">
           <div class="sim-head">
             <div class="cap">可処分所得差額の目安</div>
-            <div class="sim-big" id="sim-diff">0</div>
-            <div class="sub">円／年　・　月額 <b id="sim-diff-mo">0</b> 円</div>
+            <div class="sim-year-line"><span class="sim-big" id="sim-diff">0</span><span class="sim-year-unit">円／年</span></div>
+            <div class="sub">月額 <b id="sim-diff-mo">0</b> 円</div>
             <div class="near-note">表示額は概算です。条件により差額が小さくなる、出ない、またはマイナスになる場合があります。</div>
           </div>
           <div class="sim-cols">
@@ -646,7 +648,7 @@ footer{background:#060f1e;padding:26px 24px;text-align:center;color:rgba(255,255
         <li>給与だけではない報酬設計を検討したい</li>
         <li>社会保険料・人件費の構造を整理したい</li>
       </ul>
-      <button class="btn-primary" onclick="scrollToSection('contact')" style="margin-top:20px;font-size:14px">導入可否を相談する</button>
+      <a class="btn-primary" href="#contact" style="margin-top:20px;font-size:14px">導入可否を相談する</a>
     </div>
     <p class="target-note">10名以下・100名以上の企業でも、給与体系や従業員構成によっては導入を検討できます。まずはお気軽にご相談ください。</p>
   </div>
@@ -761,11 +763,11 @@ var NAV_ITEMS = [
 ];
 var navLinks = document.getElementById('nav-links');
 NAV_ITEMS.forEach(function(item) {
-  var btn = document.createElement('button');
+  var btn = document.createElement('a');
   btn.className = 'nav-link';
   btn.id = 'nav-' + item.id;
   btn.textContent = item.label;
-  btn.onclick = function() { scrollToSection(item.id); };
+  btn.href = '#' + item.id;
   navLinks.appendChild(btn);
 });
 
