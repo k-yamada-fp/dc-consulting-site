@@ -240,7 +240,7 @@ footer{background:#060f1e;padding:26px 24px;text-align:center;color:rgba(255,255
 </nav>
 
 <!-- FLOATING CTA -->
-<button id="floating-cta" onclick="scrollTo('contact')">導入可否を相談する →</button>
+<button id="floating-cta" onclick="scrollToSection('contact')">導入可否を相談する →</button>
 
 <!-- HERO -->
 <section class="hero" id="hero">
@@ -249,8 +249,8 @@ footer{background:#060f1e;padding:26px 24px;text-align:center;color:rgba(255,255
   <p class="hero-subtitle">採用・定着、トータルリワード、従業員のファイナンシャルウェルビーイングを支える、<br>会社の福利厚生。</p>
   <span class="hero-target-tag">主な対象：従業員10〜100名規模の中小企業。10名以下・100名以上でも個別に導入可否を確認できます</span>
   <div class="hero-cta-row">
-    <button class="btn-primary" onclick="scrollTo('dc-system')">制度概要を見る</button>
-    <button class="btn-outline" onclick="scrollTo('contact')">導入可否を相談する</button>
+    <button class="btn-primary" onclick="scrollToSection('dc-system')">制度概要を見る</button>
+    <button class="btn-outline" onclick="scrollToSection('contact')">導入可否を相談する</button>
   </div>
   <div class="hero-stats">
     <div class="hero-stat">
@@ -523,7 +523,7 @@ footer{background:#060f1e;padding:26px 24px;text-align:center;color:rgba(255,255
           <div class="sim-head">
             <div class="cap">可処分所得差額の目安</div>
             <div class="sim-big" id="sim-diff">0</div>
-            <div class="sub">円／月　・　年間 <b id="sim-diff-yr">0</b> 円</div>
+            <div class="sub">円／年　・　月額 <b id="sim-diff-mo">0</b> 円</div>
             <div class="near-note">表示額は概算です。条件により差額が小さくなる、出ない、またはマイナスになる場合があります。</div>
           </div>
           <div class="sim-cols">
@@ -646,7 +646,7 @@ footer{background:#060f1e;padding:26px 24px;text-align:center;color:rgba(255,255
         <li>給与だけではない報酬設計を検討したい</li>
         <li>社会保険料・人件費の構造を整理したい</li>
       </ul>
-      <button class="btn-primary" onclick="scrollTo('contact')" style="margin-top:20px;font-size:14px">導入可否を相談する</button>
+      <button class="btn-primary" onclick="scrollToSection('contact')" style="margin-top:20px;font-size:14px">導入可否を相談する</button>
     </div>
     <p class="target-note">10名以下・100名以上の企業でも、給与体系や従業員構成によっては導入を検討できます。まずはお気軽にご相談ください。</p>
   </div>
@@ -740,9 +740,12 @@ footer{background:#060f1e;padding:26px 24px;text-align:center;color:rgba(255,255
 
 <script>
 // ── HELPERS ──────────────────────────────────────────────────────────
-function scrollTo(id) {
+function scrollToSection(id) {
   var el = document.getElementById(id);
-  if (el) window.scrollTo({ top: el.offsetTop - 56, behavior: 'smooth' });
+  if (el) {
+    var y = el.getBoundingClientRect().top + window.pageYOffset - 56;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
 }
 function fmt(n) { return Math.round(n).toLocaleString('ja-JP'); }
 
@@ -762,7 +765,7 @@ NAV_ITEMS.forEach(function(item) {
   btn.className = 'nav-link';
   btn.id = 'nav-' + item.id;
   btn.textContent = item.label;
-  btn.onclick = function() { scrollTo(item.id); };
+  btn.onclick = function() { scrollToSection(item.id); };
   navLinks.appendChild(btn);
 });
 
@@ -912,9 +915,9 @@ function calcSim() {
   var nSal=salary-actualDc, dSi=si(nSal,kaigo), dTax=taxM(nSal,dSi), dDisp=nSal-dSi-dTax;
   var diff=dDisp-bDisp, maxDisp=Math.max(bDisp,dDisp);
   var diffEl = document.getElementById('sim-diff');
-  diffEl.textContent = fmt(diff);
+  diffEl.textContent = fmt(diff*12);
   diffEl.style.color = diff >= 0 ? '#16a34a' : '#d97706';
-  document.getElementById('sim-diff-yr').textContent = fmt(diff*12);
+  document.getElementById('sim-diff-mo').textContent = fmt(diff);
   document.getElementById('b-sal').textContent = fmt(salary);
   document.getElementById('b-si').textContent = fmt(bSi);
   document.getElementById('b-tax').textContent = fmt(bTax);
